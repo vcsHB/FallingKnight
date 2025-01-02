@@ -12,7 +12,7 @@ namespace Obstacles.Laserbook
         Shot,
     }
 
-    public class LaserBook : Obstacle
+    public class LaserBook : MonoBehaviour, IDestroyable
     {
         [Header("LaserBookInfo")]
         [SerializeField] private Vector2 laserDirection = Vector2.zero;
@@ -28,9 +28,8 @@ namespace Obstacles.Laserbook
 
         private laserFSM laserState = laserFSM.Idle;
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             StartCoroutine(Co_CoolTimeCycle());
         }
 
@@ -75,6 +74,11 @@ namespace Obstacles.Laserbook
                 laserState = laserFSM.Shot;
                 yield return new WaitForSeconds(laserMaintenanceTime);
             }
+        }
+
+        public void Destroy()
+        {
+            Debug.Log("ÆÄ±«");
         }
     }
 }

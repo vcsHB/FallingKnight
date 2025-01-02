@@ -1,15 +1,11 @@
 namespace Obstacles.FlyObstacle
 {
-    //system
-
-    //project
+    //Project
     using UnityEngine;
 
-    public class FlyObstacle : Obstacle, IDestroyable
+    public class FlyObstacle : MonoBehaviour, IDestroyable
     {
         [Header("FlyObstacleInfo")]
-        [SerializeField] private LayerMask checkLayer    = default;
-
         [SerializeField] private float checkRadius       = default;
         [SerializeField] private float moveSpeed         = default;
         [SerializeField] private float moveDistance      = default;
@@ -24,30 +20,15 @@ namespace Obstacles.FlyObstacle
             rb = GetComponent<Rigidbody2D>();
         }
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             startPosition = transform.position;
             targetPosition = transform.position + (Vector3.right * moveDistance);
-        }
-
-        private void Update()
-        {
-            if (CheckCollision())
-            {
-                //플레이어 데미지 입히기
-                Destroy();
-            }
         }
 
         private void FixedUpdate()
         {
             Move();
-        }
-
-        private bool CheckCollision()
-        {
-            return Physics2D.OverlapCircle(transform.position, checkRadius, checkLayer);
         }
 
         private void Move()
