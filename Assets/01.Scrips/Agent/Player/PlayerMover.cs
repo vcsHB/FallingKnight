@@ -1,5 +1,6 @@
 using System;
 using StatSystem;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace Agents.Players
 {
@@ -86,6 +87,15 @@ namespace Agents.Players
             {
                 _rigidCompo.linearVelocityX = 0f;
             }
+            _movementX = 0f;
+        }
+
+        public void AddForceToOuterWall(float dashPower, float jumpPower)
+        {
+            Vector2 wallPoint = DetectWall();
+            Vector2 direction = ((Vector2)transform.position - wallPoint).normalized;
+            direction = new Vector2(direction.x * dashPower, jumpPower);
+            AddForce(direction);
         }
 
         public void AddForce(Vector2 power)
@@ -95,11 +105,12 @@ namespace Agents.Players
 
         public void ReduceVerticalVelocity(float amount)
         {
-            float yVelocity =  _rigidCompo.linearVelocityY;
-            yVelocity -= amount;
+            float yVelocity = _rigidCompo.linearVelocityY;
+            if (yVelocity > 0) return;
+            yVelocity += amount;
 
-            yVelocity = Mathf.Clamp( _rigidCompo.linearVelocityY, 0f, 100f);
-             _rigidCompo.linearVelocityY = yVelocity;
+            yVelocity = Mathf.Clamp(yVelocity, -100f, 0);
+            _rigidCompo.linearVelocityY = yVelocity;
         }
 
         public void SetGravity(bool value)

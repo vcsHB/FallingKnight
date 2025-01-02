@@ -22,6 +22,7 @@ namespace Agents.Players.FSM
             AddState("Fall");
             AddState("HoldWall");
             AddState("Move");
+            AddState("AirRolling");
 
             if (_stateDictionary.TryGetValue(firstState, out PlayerState state))
             {

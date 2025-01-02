@@ -19,11 +19,20 @@ MonoBehaviour:
     baseValue: 3
     modifier: []
   moveSpeed:
-    baseValue: 6
+    baseValue: 8
     modifier: []
   defense:
     baseValue: 1
     modifier: []
   attackSpeed:
     baseValue: 2
+    modifier: []
+  speedReducePower:
+    baseValue: 5
+    modifier: []
+  dashPower:
+    baseValue: 6
+    modifier: []
+  jumpPower:
+    baseValue: 9
     modifier: []

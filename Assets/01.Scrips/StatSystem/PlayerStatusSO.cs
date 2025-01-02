@@ -20,6 +20,7 @@ namespace StatSystem
 
 
         public Dictionary<StatType, Stat> statDictionary = new Dictionary<StatType, Stat>();
+        public Stat speedReducePower;
         public Stat dashPower;
         public Stat jumpPower;
 

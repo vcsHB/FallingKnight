@@ -1,4 +1,3 @@
-using System;
 using StatSystem;
 using UnityEngine;
 namespace Agents.Players.FSM
@@ -6,12 +5,13 @@ namespace Agents.Players.FSM
 
     public class PlayerHoldWallState : PlayerState
     {
-        private float _reducePower = 0.5f;
-        private Stat _playerDashPower;
-        private Stat _playerJumpPower;
+        private Stat _playerSpeedReducePower;
+       
 
         public PlayerHoldWallState(Player player, PlayerStateMachine stateMachine, int animationHash) : base(player, stateMachine, animationHash)
         {
+            _playerSpeedReducePower = player.PlayerStatus.speedReducePower;
+            
         }
 
         public override void Enter()
@@ -26,19 +26,25 @@ namespace Agents.Players.FSM
         {
             Debug.Log("HoldWall");
             base.UpdateState();
-            _mover.ReduceVerticalVelocity(Time.deltaTime * _reducePower);
+            Vector2 wallPoint = _mover.DetectWall();
+            if(wallPoint.magnitude < 0.01f)
+            {
+                _stateMachine.ChangeState("Fall");                
+            }
+            _mover.ReduceVerticalVelocity(Time.deltaTime * _playerSpeedReducePower.GetValue());
         }
 
         public override void Exit()
         {
             base.Exit();
             _player.PlayerInput.OnJumpEvent -= HandleDash;
+
         }
 
         private void HandleDash()
         {
-            _mover.AddForce(new Vector2(_player.PlayerInput.InputDirection.x * 4f, 2f));
-            _stateMachine.ChangeState("Roll");
+            _mover.StopImmediately();
+            _stateMachine.ChangeState("AirRolling");
         }
     }
 }
