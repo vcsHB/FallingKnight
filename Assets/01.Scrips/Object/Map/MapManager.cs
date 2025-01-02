@@ -53,7 +53,7 @@ namespace Map.MapManager
         void ChangeStage()
         {
             // 임시로 그냥 랜덤으로 작업, 후에 가중치를 두는 등의 변경이 있을 수 있음.
-            int currentMapId = 0;/*Random.Range(0, mapDatas.mapDataList.Length);*/
+            int currentMapId = 1;/*Random.Range(0, mapDatas.mapDataList.Length);*/
             
             currentMapData = mapDatas.mapDataList[currentMapId];
 

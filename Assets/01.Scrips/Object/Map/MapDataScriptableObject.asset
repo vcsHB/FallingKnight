@@ -20,6 +20,10 @@ MonoBehaviour:
     - {fileID: 3999237886463502034, guid: 5de331efad9d80a459c9b8c97878ba9c, type: 3}
     - {fileID: 2610748498532325645, guid: 4d94e749c334cfa4fad207e4bd25a3a6, type: 3}
   - mapKind: 1
-    mapTileArray: []
+    mapTileArray:
+    - {fileID: 9100382630410204799, guid: 3181fd3e205488f4da998e37a3b077e6, type: 3}
+    - {fileID: 7216382225757809336, guid: ff0015aabcae25541b07cbdc0fd66c18, type: 3}
+    - {fileID: 3220944387842500339, guid: cd97c4edd64ddc14fa64f3ff42a66a21, type: 3}
+    - {fileID: 2669845029255615016, guid: 73192cf31cf9d9d4fb1a8f612fd9184f, type: 3}
   - mapKind: 2
     mapTileArray: []
