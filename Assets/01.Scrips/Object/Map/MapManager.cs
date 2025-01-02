@@ -1,4 +1,4 @@
-namespace Map.MapSpawner
+namespace Map.MapManager
 {
     using UnityEngine;
     using Map.MapData;
@@ -11,7 +11,7 @@ namespace Map.MapSpawner
         public static MapManager Instance;
 
         [Header("스크립터블 오브젝트")]
-        [SerializeField] private MapDataScriptableObjectScript  mapDatas;
+        [SerializeField] private MapDataScriptableObjectScript mapDatas;
 
         [Header("스크롤링되고 있는 오브젝트")]
         public List<GameObject> scrolledBackground = new List<GameObject>();

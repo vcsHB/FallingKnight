@@ -1,4 +1,4 @@
-using Map.MapSpawner;
+using Map.MapManager;
 using UnityEngine;
 
 public class ScrollStructure : MonoBehaviour
