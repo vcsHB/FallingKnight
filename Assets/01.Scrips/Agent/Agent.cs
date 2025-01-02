@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using StatSystem;
 using UnityEngine;
 
 
@@ -9,7 +10,7 @@ namespace Agents
 
     public class Agent : MonoBehaviour
     {
-        
+        [field: SerializeField] public StatusSO Status { get; private set; }
         private Dictionary<Type, IAgentComponent> _components = new Dictionary<Type, IAgentComponent>();
 
         protected virtual void Awake()
@@ -17,6 +18,9 @@ namespace Agents
             AddComponentToDictionary();
             ComponentInitialize();
             AfterInit();
+
+
+            Status = Instantiate(Status);
 
         }
 

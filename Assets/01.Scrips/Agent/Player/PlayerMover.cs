@@ -1,4 +1,5 @@
 using System;
+using StatSystem;
 using UnityEngine;
 namespace Agents.Players
 {
@@ -19,7 +20,7 @@ namespace Agents.Players
         private float _movementY;
         private float _moveSpeedMultiplier, _originalgravity;
         [field: SerializeField] public bool CanManualMove { get; set; } = true;
-
+        private Stat _moveSpeedStat;
 
         private void Awake()
         {
@@ -31,6 +32,9 @@ namespace Agents.Players
         {
             _player = agent as Player;
             _moveSpeedMultiplier = 1f;
+
+            _moveSpeedStat = _player.PlayerStatus.moveSpeed;
+
         }
 
         public void AfterInit()
@@ -45,7 +49,7 @@ namespace Agents.Players
         {
             if (CanManualMove)
             {
-                _rigidCompo.linearVelocityX = _movementX * _moveSpeed * _moveSpeedMultiplier;
+                _rigidCompo.linearVelocityX = _movementX * _moveSpeedStat.GetValue() * _moveSpeedMultiplier;
             }
             // if (_isFalling)
             // {
