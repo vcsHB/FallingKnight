@@ -2,27 +2,21 @@ using UnityEngine;
 
 namespace Map.MapData
 {
+    public enum MapKind
+    {
+        ExteriorWall,
+        Library,
+        Jail,
+    }
+
     [System.Serializable]
     public class MapData
     {
         /// <summary>
         /// 맵 이름
         /// </summary>
-        public string mapName;
+        public MapKind mapKind;
 
-        /// <summary>
-        /// 배경 배열
-        /// </summary>
-        public GameObject[] backgroundArray;
-        
-        /// <summary>
-        /// 벽 배열
-        /// </summary>
-        public GameObject[] wallArray;
-
-        /// <summary>
-        /// 장애물 배열
-        /// </summary>
-        public GameObject[] obstacleArray;
+        public GameObject[] mapTileArray;
     }
 }

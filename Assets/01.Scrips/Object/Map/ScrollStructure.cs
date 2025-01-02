@@ -17,11 +17,6 @@ public class ScrollStructure : MonoBehaviour
 
     void DeleteObject()
     {
-        if(MapManager.Instance.scrolledBackground.Contains(gameObject))
-        {
-            MapManager.Instance.scrolledBackground.Remove(gameObject);
-        }
-
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

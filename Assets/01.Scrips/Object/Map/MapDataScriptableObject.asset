@@ -13,20 +13,13 @@ MonoBehaviour:
   m_Name: MapDataScriptableObject
   m_EditorClassIdentifier: 
   mapDataList:
-  - mapName: Exterior Wall
-    backgroundArray:
+  - mapKind: 0
+    mapTileArray:
     - {fileID: 7813177105371024504, guid: b0118c09b2716ec4ab9ccd0417096b2d, type: 3}
     - {fileID: 8849766063250644413, guid: 7bc56aad6b955fb41b1f82f0ff91db1a, type: 3}
     - {fileID: 3999237886463502034, guid: 5de331efad9d80a459c9b8c97878ba9c, type: 3}
     - {fileID: 2610748498532325645, guid: 4d94e749c334cfa4fad207e4bd25a3a6, type: 3}
-    wallArray:
-    - {fileID: 6990251936366998831, guid: 30f15a70e365af441a86e0576453b1d5, type: 3}
-    obstacleArray: []
-  - mapName: Library
-    backgroundArray: []
-    wallArray: []
-    obstacleArray: []
-  - mapName: Jail
-    backgroundArray: []
-    wallArray: []
-    obstacleArray: []
+  - mapKind: 1
+    mapTileArray: []
+  - mapKind: 2
+    mapTileArray: []
