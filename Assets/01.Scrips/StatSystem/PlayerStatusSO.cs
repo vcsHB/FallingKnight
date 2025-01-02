@@ -9,6 +9,8 @@ namespace StatSystem
         MoveSpeed,
         Defense,
         AttackSpeed,
+        DashPower,
+        JumpPower
     }
 
 
@@ -18,7 +20,8 @@ namespace StatSystem
 
 
         public Dictionary<StatType, Stat> statDictionary = new Dictionary<StatType, Stat>();
-        //public Stat scoreBonus;
+        public Stat dashPower;
+        public Stat jumpPower;
 
         public void AddModifier(StatType targetStat, int increaseValue)
         {
@@ -43,6 +46,8 @@ namespace StatSystem
             statDictionary.Add(StatType.MoveSpeed, moveSpeed);
             statDictionary.Add(StatType.Defense, defense);
             statDictionary.Add(StatType.AttackSpeed, attackSpeed);
+            statDictionary.Add(StatType.DashPower, dashPower);
+            statDictionary.Add(StatType.JumpPower, jumpPower);
         }
     }
 }

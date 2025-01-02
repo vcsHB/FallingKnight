@@ -33,7 +33,7 @@ namespace Agents.Players
             _player = agent as Player;
             _moveSpeedMultiplier = 1f;
 
-            _moveSpeedStat = _player.PlayerStatus.moveSpeed;
+            _moveSpeedStat = _player.Status.moveSpeed;
 
         }
 

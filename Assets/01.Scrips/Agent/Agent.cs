@@ -15,12 +15,12 @@ namespace Agents
 
         protected virtual void Awake()
         {
+            Status = Instantiate(Status);
             AddComponentToDictionary();
             ComponentInitialize();
             AfterInit();
 
 
-            Status = Instantiate(Status);
 
         }
 

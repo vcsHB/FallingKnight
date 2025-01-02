@@ -2,7 +2,6 @@ using Agents.Players.FSM;
 using InputSystem;
 using StatSystem;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace Agents.Players
 {
