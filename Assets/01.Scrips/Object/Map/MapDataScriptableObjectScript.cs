@@ -1,8 +1,11 @@
-using UnityEngine;
-using Object.Map.MapData;
-
-[CreateAssetMenu(fileName = "MapDataScriptableObjectScript", menuName = "Scriptable Objects/MapDataScriptableObjectScript")]
-public class MapDataScriptableObjectScript : ScriptableObject
+namespace Object.Map.MapData.ScriptableObject
 {
-    public MapData[] mapDataList;
+    using UnityEngine;
+    using Object.Map.MapData;
+
+    [CreateAssetMenu(fileName = "MapDataScriptableObjectScript", menuName = "Scriptable Objects/MapDataScriptableObjectScript")]
+    public class MapDataScriptableObjectScript : ScriptableObject
+    {
+        public MapData[] mapDataList;
+    }
 }

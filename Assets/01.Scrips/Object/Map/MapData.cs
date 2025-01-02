@@ -1,15 +1,28 @@
+using UnityEngine;
+
 namespace Object.Map.MapData
 {
-    public enum MapIds
-    {
-        Outside = 0,
-        Library = 1,
-        Jail = 2,
-    }
-
     [System.Serializable]
     public class MapData
     {
-        public MapIds mapId;
+        /// <summary>
+        /// 맵 이름
+        /// </summary>
+        public string mapName;
+
+        /// <summary>
+        /// 배경 배열
+        /// </summary>
+        public GameObject[] backgroundArray;
+        
+        /// <summary>
+        /// 벽 배열
+        /// </summary>
+        public GameObject[] wallArray;
+
+        /// <summary>
+        /// 장애물 배열
+        /// </summary>
+        public GameObject[] obstacleArray;
     }
 }
