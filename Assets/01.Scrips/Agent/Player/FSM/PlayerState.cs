@@ -11,6 +11,8 @@ namespace Agents.Players.FSM
         protected AnimParamSO _stateAnimParam;
         protected PlayerMover _mover;
         protected AgentRenderer _renderer;
+        protected PlayerAnimationTrigger _animationTrigger;
+
         protected bool _isTriggered;
 
         public PlayerState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam)
@@ -20,6 +22,7 @@ namespace Agents.Players.FSM
             _stateMachine = stateMachine;
             _stateAnimParam = stateAnimParam;
             _mover = player.GetCompo<PlayerMover>();
+            _animationTrigger = player.GetCompo<PlayerAnimationTrigger>();
         }
 
 
@@ -27,12 +30,21 @@ namespace Agents.Players.FSM
         {
             _renderer.SetParam(_stateAnimParam, true);
             _isTriggered = false;
+            _animationTrigger.OnAnimationEnd += AnimationEndTrigger;
+
         }
         public virtual void UpdateState() { }
 
         public virtual void Exit()
         {
             _renderer.SetParam(_stateAnimParam, false);
+            _animationTrigger.OnAnimationEnd -= AnimationEndTrigger;
+        }
+
+
+        public virtual void AnimationEndTrigger()
+        {
+            _isTriggered = true;
         }
     }
 }

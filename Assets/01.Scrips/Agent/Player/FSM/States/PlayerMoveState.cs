@@ -2,7 +2,7 @@ using Agents.Animate;
 using UnityEngine;
 namespace Agents.Players.FSM
 {
-    public class PlayerMoveState : PlayerAirState
+    public class PlayerMoveState : PlayerAttackableAirState
     {
 
         public PlayerMoveState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)

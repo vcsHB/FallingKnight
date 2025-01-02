@@ -8,7 +8,7 @@ namespace Combat
         public override void Cast()
         {
             base.Cast();
-            _hits = Physics2D.OverlapBoxAll(CenterPosition, _boxSize, _targetLayer);
+            _hits = Physics2D.OverlapBoxAll(CenterPosition, _boxSize, 0, _targetLayer);
             for (int i = 0; i < _hits.Length; i++)
             {
                 for (int j = 0; j < _casters.Length; j++)
@@ -19,7 +19,8 @@ namespace Combat
             }
         }
 
-        private void OnDrawGizmos() {
+        private void OnDrawGizmos()
+        {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(CenterPosition, _boxSize);
         }

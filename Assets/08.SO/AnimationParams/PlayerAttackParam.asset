@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e2c498b32a01541b3f6d3a236d7d29, type: 3}
   m_Name: PlayerAttackParam
   m_EditorClassIdentifier: 
-  paramName: 
-  hashValue: 0
+  paramName: Attack
+  hashValue: 1080829965

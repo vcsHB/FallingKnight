@@ -27,6 +27,7 @@ namespace Agents.Players
 
         public UnityEvent OnHoldWallEvent;
         public UnityEvent OnReleaseWallEvent;
+        public UnityEvent OnAttackEvent;
         
 
         protected override void Awake()
