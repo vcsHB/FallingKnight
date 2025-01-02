@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 585618525493540909}
   - component: {fileID: 2601759861528085098}
-  - component: {fileID: 746940484346618457}
+  - component: {fileID: 710008601765138631}
   - component: {fileID: -8517774621629345014}
+  - component: {fileID: 7293239705633123624}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.11, y: 1.38, z: 0}
-  m_LocalScale: {x: 0.2466, y: 0.6065, z: 1}
+  m_LocalScale: {x: 1.0034305, y: 0.22808391, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &746940484346618457
+--- !u!114 &710008601765138631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,15 +99,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 622245820929754720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae570308e974e8479c7a82451fab62a, type: 3}
+  m_Script: {fileID: 11500000, guid: 43a88e288c071db4cb7e7f25798f4378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: {x: 0, y: 0}
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  _targetMaxAmount: 0
-  _boxSize: {x: 0.26, y: 0.6}
+  bulletSpeed: 10
+  destroyTime: 3
 --- !u!114 &-8517774621629345014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,3 +117,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 0
+--- !u!114 &7293239705633123624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622245820929754720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbe0b0fe3ec4a44da64070e68e4a55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: 0, y: 0}
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _targetMaxAmount: 0
+  _detectRadius: 0.13

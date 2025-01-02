@@ -38,7 +38,7 @@ namespace Obstacles.Shooter
 
         private void ShotBullet()
         {
-            Instantiate(bulletObject, transform.position, Quaternion.identity);
+            Instantiate(bulletObject, transform.position, Quaternion.Euler(0, 0, rotZ));
         }
 
         private bool CheckPlayer()
