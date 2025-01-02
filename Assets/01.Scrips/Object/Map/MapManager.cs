@@ -5,6 +5,7 @@ namespace Map.MapManager
     using Map.MapData.ScriptableObject;
     using System.Collections.Generic;
     using System.Collections;
+    using Unity.Cinemachine;
 
     public class MapManager : MonoBehaviour
     {
@@ -12,6 +13,9 @@ namespace Map.MapManager
 
         [Header("스크립터블 오브젝트")]
         [SerializeField] private MapDataScriptableObjectScript mapDatas;
+
+        [Header("카메라")]
+        [SerializeField] private CinemachineCamera followCam;
 
         [Header("기타")]
         [SerializeField] private const float offset = 1.0f;
@@ -66,8 +70,7 @@ namespace Map.MapManager
             int nextMapTileNumber = 0;
             int mapKind = (int)currentMapData.mapKind; // enum으로 현재 맵의 종류 찾기
 
-            Camera mainCamera = Camera.main;
-            Vector2 cameraBottomPos = new Vector2(mainCamera.transform.position.x, mainCamera.transform.position.y - mainCamera.orthographicSize);
+            float cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize;
 
             #region 큐에 오브젝트 할당 및 스크롤링 시작을 위한 처음 타일 생성
             if (poolingQueueList[mapKind].Count < currentMapData.mapTileArray.Length)
@@ -75,13 +78,13 @@ namespace Map.MapManager
                 poolingQueueList[mapKind].Clear();
                 for (int i = 0; i < currentMapData.mapTileArray.Length; i++)
                 {
-                    GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(0f, mainCamera.transform.position.y - 10.0f), Quaternion.identity);
+                    GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(0f, cameraBottomPosY - 10.0f), Quaternion.identity);
                     poolingQueueList[mapKind].Enqueue(newMapTile);
                     newMapTile.SetActive(false);
                 }
             }
             GameObject startMapTile = poolingQueueList[mapKind].Dequeue();
-            startMapTile.transform.position = new Vector2(0f, mainCamera.transform.position.y - 10.0f);
+            startMapTile.transform.position = new Vector2(0f, cameraBottomPosY - 10.0f);
             // nextMapTile 활성화
             startMapTile.SetActive(true);
             poolingQueueList[mapKind].Enqueue(startMapTile);
@@ -94,8 +97,8 @@ namespace Map.MapManager
             isScroll = true;
             while (isScroll)
             {
-                cameraBottomPos = new Vector2(mainCamera.transform.position.x, mainCamera.transform.position.y - mainCamera.orthographicSize); // 화면의 아래 부분의 위치
-                if (cameraBottomPos.y - offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 - offset 보다 커지면 다음 맵타일 생성
+                cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표
+                if (cameraBottomPosY - offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 - offset 보다 커지면 다음 맵타일 생성
                 {
                     GameObject nextMapTile = poolingQueueList[mapKind].Dequeue(); // poolingQueueList[mapKind]에서 Dequeue한 오브젝트를 mapTile에 할당
                     if (!nextMapTile.activeSelf) // nextMapTile이 활성화되어 있지 않을 경우, 
