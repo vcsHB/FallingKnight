@@ -15,8 +15,11 @@ namespace Object.Map.MapSpawner
 
         [Header("스크롤링되고 있는 오브젝트")]
         public List<GameObject> scrolledBackground = new List<GameObject>();
+        public List<GameObject> scrolledWall = new List<GameObject>();
+        public List<GameObject> scrolledObstacle = new List<GameObject>();
 
         [Header("기타")]
+        [SerializeField] private const float offset = 1.0f;
         public float    fallingSpeed = 5.0f;
         public bool     isScroll;
         public MapData  currentMapData;
@@ -55,34 +58,58 @@ namespace Object.Map.MapSpawner
 
         IEnumerator CoSpawnMapPrefab()
         {
-            int nextPrefabNumber = 0;
+            int nextBackgroundNumber = 0;
+            int nextWallNumber = 0;
 
             Camera mainCamera = Camera.main;
             Vector2 cameraBottomPos = new Vector2(mainCamera.transform.position.x, mainCamera.transform.position.y - mainCamera.orthographicSize);
 
             #region 스크롤링 시작을 위한 처음 타일 생성
-            GameObject pre = Instantiate(currentMapData.backgroundArray[nextPrefabNumber], cameraBottomPos, Quaternion.identity);
-            scrolledBackground.Add(pre);
+            GameObject startBackground = Instantiate(currentMapData.backgroundArray[nextBackgroundNumber], cameraBottomPos, Quaternion.identity);
+            scrolledBackground.Add(startBackground);
 
-            nextPrefabNumber++;
+            nextBackgroundNumber++;
+            if (nextBackgroundNumber >= currentMapData.backgroundArray.Length) nextBackgroundNumber = 0;
+
+            GameObject startWall = Instantiate(currentMapData.wallArray[nextWallNumber], cameraBottomPos, Quaternion.identity);
+            scrolledWall.Add(startWall);
+
+            nextWallNumber++;
+            if (nextWallNumber >= currentMapData.wallArray.Length) nextWallNumber = 0;
             #endregion
 
             isScroll = true;
             while (isScroll)
             {
-                Transform tileTransform = scrolledBackground[scrolledBackground.Count - 1].transform;
+                #region 배경 생성
+                Transform backgroundTransform = scrolledBackground[scrolledBackground.Count - 1].transform;
 
-                if (cameraBottomPos.y - 1.0f < tileTransform.position.y)
+                if (cameraBottomPos.y - offset < backgroundTransform.position.y)
                 {
-                    GameObject prefab = Instantiate(currentMapData.backgroundArray[nextPrefabNumber],
-                                        scrolledBackground.Count > 0 ? new Vector2(0, tileTransform.position.y - tileTransform.GetComponent<SpriteRenderer>().bounds.size.y) : cameraBottomPos,
+                    GameObject prefab = Instantiate(currentMapData.backgroundArray[nextBackgroundNumber],
+                                        scrolledBackground.Count > 0 ? new Vector2(0, backgroundTransform.position.y - backgroundTransform.GetComponent<SpriteRenderer>().bounds.size.y) : cameraBottomPos,
                                         Quaternion.identity);
                     scrolledBackground.Add(prefab);
 
-                    nextPrefabNumber++;
-                    if (nextPrefabNumber >= currentMapData.backgroundArray.Length) nextPrefabNumber = 0;
+                    nextBackgroundNumber++;
+                    if (nextBackgroundNumber >= currentMapData.backgroundArray.Length) nextBackgroundNumber = 0;
                 }
-                
+                #endregion
+
+                #region 벽 생성
+                Transform wallTransform = scrolledWall[scrolledWall.Count - 1].transform;
+
+                if (cameraBottomPos.y - offset < wallTransform.position.y)
+                {
+                    GameObject prefab = Instantiate(currentMapData.wallArray[nextWallNumber],
+                                        scrolledWall.Count > 0 ? new Vector2(0, wallTransform.position.y - wallTransform.GetComponentInChildren<SpriteRenderer>().bounds.size.y) : cameraBottomPos,
+                                        Quaternion.identity);
+                    scrolledWall.Add(prefab);
+
+                    nextWallNumber++;
+                    if (nextWallNumber >= currentMapData.wallArray.Length) nextWallNumber = 0;
+                }
+                #endregion
 
                 yield return null;
             }

@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapDatas: {fileID: 11400000, guid: 8387cd732654957459c946d9e4e03920, type: 2}
   scrolledBackground: []
+  scrolledWall: []
+  scrolledObstacle: []
   fallingSpeed: 5
   isScroll: 0
   currentMapData:
