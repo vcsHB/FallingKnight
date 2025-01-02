@@ -2,6 +2,7 @@ using Agents.Players.FSM;
 using InputSystem;
 using StatSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Agents.Players
 {
@@ -13,6 +14,12 @@ namespace Agents.Players
         public PlayerStatusSO PlayerStatus { get; private set; }
 
         public PlayerStateMachine StateMachine;
+
+        [Header("Events")]
+
+        public UnityEvent OnHoldWallEvent;
+        public UnityEvent OnReleaseWallEvent;
+        
 
         protected override void Awake()
         {
