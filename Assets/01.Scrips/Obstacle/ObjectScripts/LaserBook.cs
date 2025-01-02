@@ -16,6 +16,7 @@ namespace Obstacles.Laserbook
     {
         [Header("LaserBookInfo")]
         [SerializeField] private Vector2 laserDirection = Vector2.zero;
+        [SerializeField] private LayerMask checkLayer = default;
 
         [SerializeField] private float laserYPos                = default;
         [SerializeField] private float laserDistance            = default;
@@ -52,8 +53,8 @@ namespace Obstacles.Laserbook
         //레이저 발사
         private void ShotLaser()
         {
-            RaycastHit2D lowerHit = Physics2D.Raycast(transform.position + (Vector3.up * laserYPos), laserDirection, laserDistance);
-            RaycastHit2D upperHit = Physics2D.Raycast(transform.position + (Vector3.up * -laserYPos), laserDirection, laserDistance);
+            RaycastHit2D lowerHit = Physics2D.Raycast(transform.position + (Vector3.up * laserYPos), laserDirection, laserDistance, checkLayer);
+            RaycastHit2D upperHit = Physics2D.Raycast(transform.position + (Vector3.up * -laserYPos), laserDirection, laserDistance, checkLayer);
 
             Debug.DrawRay(transform.position + (Vector3.up * laserYPos), laserDirection * laserDistance, Color.red);
             Debug.DrawRay(transform.position + (Vector3.up * -laserYPos), laserDirection * laserDistance, Color.red);
