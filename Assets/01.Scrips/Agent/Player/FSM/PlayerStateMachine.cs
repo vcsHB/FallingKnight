@@ -19,7 +19,9 @@ namespace Agents.Players.FSM
 
         public void Initialize(string firstState)
         {
-            AddState("Idle");
+            AddState("Fall");
+            AddState("HoldWall");
+            AddState("Move");
 
             if (_stateDictionary.TryGetValue(firstState, out PlayerState state))
             {

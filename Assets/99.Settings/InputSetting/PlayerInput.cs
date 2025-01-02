@@ -1,5 +1,4 @@
 using UnityEngine;
-using InputSystem;
 using UnityEngine.InputSystem;
 using System;
 namespace InputSystem
@@ -8,6 +7,7 @@ namespace InputSystem
     public class PlayerInput : ScriptableObject, Controls.IPlayerActions
     {
         public event Action OnJumpEvent;
+        public event Action OnHoldWallEvent;
         public event Action OnInteractEvent;
         public event Action OnAttackEvent;
         public Vector2 InputDirection { get; private set; }
@@ -39,7 +39,10 @@ namespace InputSystem
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            OnJumpEvent?.Invoke();
+            if(context.performed)
+                OnHoldWallEvent?.Invoke();
+            else if(context.canceled)
+                OnJumpEvent?.Invoke();
         }
 
         public void OnMove(InputAction.CallbackContext context)
