@@ -1,12 +1,13 @@
 namespace Obstacles.Laserbook
 {
+    using NUnit.Framework.Constraints;
     //System
     using System.Collections;
 
     //Project
     using UnityEngine;
 
-    public enum laserFSM
+    public enum LaserFSM
     {
         Idle,
         Shot,
@@ -26,24 +27,34 @@ namespace Obstacles.Laserbook
         //레이저 유지시간
         [SerializeField] private float laserMaintenanceTime     = default;  
 
-        private laserFSM laserState = laserFSM.Idle;
+        private LaserFSM laserState = LaserFSM.Idle;
+
+        private Animator anim = null;
+        private float timer = default;
+
+        private bool isShot = default;
 
         private void Start()
         {
-            StartCoroutine(Co_CoolTimeCycle());
+            anim = GetComponent<Animator>();
+            StartCoroutine(Co_ShootingCycle());
+            isShot = false;
         }
 
         private void Update()
         {
             switch (laserState)
             {
-                case laserFSM.Idle:
+                case LaserFSM.Idle:
                     {
                         break;
                     }
-                case laserFSM.Shot:
+                case LaserFSM.Shot:
                     {
-                        ShotLaser();
+                        if (isShot)
+                        {
+                            ShotLaser();
+                        }
                         break;
                     }
             }
@@ -58,22 +69,20 @@ namespace Obstacles.Laserbook
             Debug.DrawRay(transform.position + (Vector3.up * laserYPos), laserDirection * laserDistance, Color.red);
             Debug.DrawRay(transform.position + (Vector3.up * -laserYPos), laserDirection * laserDistance, Color.red);
 
-            if (upperHit.collider != null || lowerHit.collider != null)
+            if(lowerHit.collider != null || upperHit.collider != null)
             {
-                //플레이어 피해 입히기
+                //플레이어 피해 처리
             }
         }
 
-        //쿨타임 동안 대기후에 유지 시간 만큼 레이저를 발사하고 반복함
-        private IEnumerator Co_CoolTimeCycle()
+        private IEnumerator Co_ShootingCycle()
         {
-            while (true)
-            {
-                laserState = laserFSM.Idle;
-                yield return new WaitForSeconds(laserCoolTime);
-                laserState = laserFSM.Shot;
-                yield return new WaitForSeconds(laserMaintenanceTime);
-            }
+            laserState = LaserFSM.Idle;
+            yield return new WaitForSeconds(laserCoolTime);
+            laserState = LaserFSM.Shot;
+            isShot = true;
+            yield return new WaitForSeconds(laserMaintenanceTime);
+            isShot = false;
         }
 
         public void Destroy()

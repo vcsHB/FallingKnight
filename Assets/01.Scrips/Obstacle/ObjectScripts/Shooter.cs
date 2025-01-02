@@ -17,23 +17,32 @@ namespace Obstacles.Shooter
 
         private float timer     = default;
         private float rotZ      = default;
+        private Animator anim;
         private Transform playerTrasnform = null;
+
+        private void Awake()
+        {
+            anim = GetComponent<Animator>();
+        }
 
         private void Update()
         {
             transform.rotation = Quaternion.Euler(0,0,rotZ);
-
             if(CheckPlayer())
             {
                 GetFireRot(playerTrasnform);
-
                 timer += Time.deltaTime;
 
-                if(timer >= shotCoolTime)
+                if (timer > shotCoolTime)
                 {
-                    ShotBullet();
+                    anim.SetTrigger("Attack");
                     timer = 0;
                 }
+            }
+            else
+            {
+                anim.ResetTrigger("Attack");
+                timer = 0;
             }
         }
 

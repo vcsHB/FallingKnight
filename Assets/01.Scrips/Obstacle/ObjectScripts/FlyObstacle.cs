@@ -6,7 +6,6 @@ namespace Obstacles.FlyObstacle
     public class FlyObstacle : MonoBehaviour, IDestroyable
     {
         [Header("FlyObstacleInfo")]
-        [SerializeField] private float checkRadius       = default;
         [SerializeField] private float moveSpeed         = default;
         [SerializeField] private float moveDistance      = default;
 
