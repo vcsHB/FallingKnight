@@ -8,7 +8,7 @@ namespace Obstacles.FlyObstacle
     public class FlyObstacle : Obstacle, IDestroyable
     {
         [Header("FlyObstacleInfo")]
-        [SerializeField] private LayerMask checkLayer = default;
+        [SerializeField] private LayerMask checkLayer    = default;
 
         [SerializeField] private float checkRadius       = default;
         [SerializeField] private float moveSpeed         = default;
@@ -42,10 +42,7 @@ namespace Obstacles.FlyObstacle
 
         private void FixedUpdate()
         {
-            if (!CheckCollision())
-            {
-                Move();
-            }
+            Move();
         }
 
         private bool CheckCollision()
