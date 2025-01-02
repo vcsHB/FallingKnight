@@ -14,6 +14,7 @@ namespace Agents.Players
         [SerializeField] private float _wallDetectRange;
         private Rigidbody2D _rigidCompo;
         public bool IsGravity => _rigidCompo.gravityScale != 0f;
+        public float YVelocity => _rigidCompo.linearVelocityY;
         private Player _player;
         private bool _isFalling;
 
