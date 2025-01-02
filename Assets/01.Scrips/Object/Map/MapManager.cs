@@ -75,13 +75,13 @@ namespace Map.MapManager
                 poolingQueueList[mapKind].Clear();
                 for (int i = 0; i < currentMapData.mapTileArray.Length; i++)
                 {
-                    GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(mainCamera.transform.position.x, mainCamera.transform.position.y - 10.0f), Quaternion.identity);
+                    GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(0f, mainCamera.transform.position.y - 10.0f), Quaternion.identity);
                     poolingQueueList[mapKind].Enqueue(newMapTile);
                     newMapTile.SetActive(false);
                 }
             }
             GameObject startMapTile = poolingQueueList[mapKind].Dequeue();
-            startMapTile.transform.position = new Vector2(mainCamera.transform.position.x, mainCamera.transform.position.y - 10.0f);
+            startMapTile.transform.position = new Vector2(0f, mainCamera.transform.position.y - 10.0f);
             // nextMapTile 활성화
             startMapTile.SetActive(true);
             poolingQueueList[mapKind].Enqueue(startMapTile);
@@ -111,7 +111,7 @@ namespace Map.MapManager
                     {
                         // 프리팹으로 새 맵타일 생성 후, 배치
                         GameObject prefab = Instantiate(currentMapData.mapTileArray[nextMapTileNumber],
-                                                                new Vector2(0, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y), 
+                                                                new Vector2(0f, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y), 
                                                                 Quaternion.identity);
                         // lastMapTile을 prefab.transform으로 변경해서 다음에 생성될 맵타일 올바른 위치에 생성될 수 있도록 함.
                         lastMapTile = prefab.transform;
