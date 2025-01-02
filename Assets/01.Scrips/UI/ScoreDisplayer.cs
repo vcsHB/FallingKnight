@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace UIManage.InGame
@@ -9,7 +10,7 @@ namespace UIManage.InGame
 
         public void HandleRefreshScoreText(int deepLevel)
         {
-            _text.text =deepLevel.ToString("");''
+            _text.text = deepLevel.ToString("");
         }
     }
 

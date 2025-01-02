@@ -15,6 +15,7 @@ namespace Agents.Players
         [field:SerializeField] public AnimParamSO HoldWallParam;
         [field:SerializeField] public AnimParamSO AirRollingParam;
         [field:SerializeField] public AnimParamSO AttackParam;
+        [field:SerializeField] public AnimParamSO DropAttackParam;
         [Header("Essentials")]
 
         [field: SerializeField] public PlayerInput PlayerInput { get; private set; }
@@ -28,6 +29,7 @@ namespace Agents.Players
         public UnityEvent OnHoldWallEvent;
         public UnityEvent OnReleaseWallEvent;
         public UnityEvent OnAttackEvent;
+        public UnityEvent OnDropAttackEvent;
         
 
         protected override void Awake()

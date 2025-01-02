@@ -90,6 +90,7 @@ namespace Agents.Players
             Vector2 wallPoint = DetectWall();
             Vector2 direction = ((Vector2)transform.position - wallPoint).normalized;
             direction = new Vector2(direction.x * dashPower, jumpPower);
+            _renderer.FlipController(direction.x);
             AddForce(direction);
         }
 

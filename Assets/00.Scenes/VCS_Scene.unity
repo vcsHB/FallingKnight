@@ -787,7 +787,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 8
-  m_Depth: -1
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
@@ -7320,7 +7320,7 @@ Transform:
   m_GameObject: {fileID: 1438113077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 31.3, z: -10}
+  m_LocalPosition: {x: 1, y: 40.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7507,13 +7507,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532758357}
+  - component: {fileID: 1532758358}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1532758357
 Transform:
   m_ObjectHideFlags: 0
@@ -7523,12 +7524,30 @@ Transform:
   m_GameObject: {fileID: 1532758356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.269226, y: 56.173843, z: -9.911723}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532758358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532758356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa4a560181472641a4a83b1638bc5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapDatas: {fileID: 11400000, guid: 8387cd732654957459c946d9e4e03920, type: 2}
+  fallingSpeed: 5
+  isScroll: 1
+  currentMapData:
+    mapKind: 0
+    mapTileArray: []
 --- !u!1 &1533314025
 GameObject:
   m_ObjectHideFlags: 0
@@ -64975,7 +64994,7 @@ Transform:
   m_GameObject: {fileID: 1877432099}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 31.3, z: -10}
+  m_LocalPosition: {x: 1, y: 40.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65069,7 +65088,7 @@ GameObject:
   - component: {fileID: 1918387855}
   - component: {fileID: 1918387856}
   m_Layer: 5
-  m_Name: HealthGauge (1)
+  m_Name: HeatGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65326,7 +65345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.3
+      value: 40.3
       objectReference: {fileID: 0}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65369,6 +65388,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1532758357}
   - {fileID: 1248988561}
   - {fileID: 425702060}
   - {fileID: 1991997074}
@@ -65382,4 +65402,3 @@ SceneRoots:
   - {fileID: 1094957093}
   - {fileID: 1167914868}
   - {fileID: 1114737137}
-  - {fileID: 1532758357}
