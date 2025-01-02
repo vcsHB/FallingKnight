@@ -9,6 +9,7 @@ namespace Obstacles.Shooter
     public class Shooter : MonoBehaviour, IDestroyable
     {
         [Header("ShooterInfo")]
+        [SerializeField] private Transform firePosition  = default;
         [SerializeField] private LayerMask checkTarget   = default;
         [SerializeField] private float shotCoolTime      = default;
         [SerializeField] private float checkRadius       = default;
@@ -38,7 +39,7 @@ namespace Obstacles.Shooter
 
         private void ShotBullet()
         {
-            Instantiate(bulletObject, transform.position, Quaternion.Euler(0, 0, rotZ));
+            Instantiate(bulletObject, firePosition.position, Quaternion.Euler(0, 0, rotZ));
         }
 
         private bool CheckPlayer()
