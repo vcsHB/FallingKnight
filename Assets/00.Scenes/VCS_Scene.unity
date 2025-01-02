@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 211519803}
   - component: {fileID: 211519807}
   - component: {fileID: 211519806}
+  - component: {fileID: 211519808}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -252,6 +253,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Status>k__BackingField: {fileID: 11400000, guid: ed1dbf09bdef62446bb9263df8561d89, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 9b5f2fbb43ef87143a73760405a2ac8e, type: 2}
+--- !u!114 &211519808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211519802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa033c7adca2f94389ee642326e076a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthDecreaseEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &773691114
 GameObject:
   m_ObjectHideFlags: 0
