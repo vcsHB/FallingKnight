@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Object.Map.MapData
+namespace Map.MapData
 {
     [System.Serializable]
     public class MapData

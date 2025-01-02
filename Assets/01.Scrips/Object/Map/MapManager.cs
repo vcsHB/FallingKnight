@@ -1,8 +1,8 @@
-namespace Object.Map.MapSpawner
+namespace Map.MapSpawner
 {
     using UnityEngine;
-    using Object.Map.MapData;
-    using Object.Map.MapData.ScriptableObject;
+    using Map.MapData;
+    using Map.MapData.ScriptableObject;
     using System.Collections.Generic;
     using System.Collections;
 
@@ -67,13 +67,11 @@ namespace Object.Map.MapSpawner
             #region 스크롤링 시작을 위한 처음 타일 생성
             GameObject startBackground = Instantiate(currentMapData.backgroundArray[nextBackgroundNumber], cameraBottomPos, Quaternion.identity);
             scrolledBackground.Add(startBackground);
-
             nextBackgroundNumber++;
             if (nextBackgroundNumber >= currentMapData.backgroundArray.Length) nextBackgroundNumber = 0;
 
             GameObject startWall = Instantiate(currentMapData.wallArray[nextWallNumber], cameraBottomPos, Quaternion.identity);
             scrolledWall.Add(startWall);
-
             nextWallNumber++;
             if (nextWallNumber >= currentMapData.wallArray.Length) nextWallNumber = 0;
             #endregion
