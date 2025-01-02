@@ -179,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565743943}
   - component: {fileID: 565743944}
+  - component: {fileID: 565743945}
   m_Layer: 6
   m_Name: NormalAttack
   m_TagString: Untagged
@@ -219,6 +220,19 @@ MonoBehaviour:
     m_Bits: 128
   _targetMaxAmount: 3
   _boxSize: {x: 2.67, y: 1.32}
+--- !u!114 &565743945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565743942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6803eeb6a6409d409d1eefc55850cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 2
 --- !u!1 &750791697
 GameObject:
   m_ObjectHideFlags: 0
