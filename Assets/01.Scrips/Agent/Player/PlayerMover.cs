@@ -107,10 +107,9 @@ namespace Agents.Players
         public void ReduceVerticalVelocity(float amount)
         {
             float yVelocity = _rigidCompo.linearVelocityY;
-            if (yVelocity > 0) return;
+            yVelocity = Mathf.Clamp(yVelocity, -100f, 0);
             yVelocity += amount;
 
-            yVelocity = Mathf.Clamp(yVelocity, -100f, 0);
             _rigidCompo.linearVelocityY = yVelocity;
         }
 
