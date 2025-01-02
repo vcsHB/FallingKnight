@@ -1,16 +1,21 @@
+using DG.Tweening;
 using UnityEngine;
 
-public class SlashVFXPlayer : MonoBehaviour
+namespace ObjectManage
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public class SlashVFXPlayer : MonoBehaviour
     {
-        
+        [SerializeField] Transform _impactTrm;
+        [SerializeField] private float _duration = 1f;
+
+        [SerializeField] private float _max = 0.2f;
+
+
+        public void Play()
+        {
+            _impactTrm.localScale = new Vector3(_impactTrm.localScale.x, _max, 1f);
+            _impactTrm.DOScaleY(0f, _duration);
+        }
     }
 }

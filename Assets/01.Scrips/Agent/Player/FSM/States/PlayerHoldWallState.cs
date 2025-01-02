@@ -37,7 +37,7 @@ namespace Agents.Players.FSM
             }
             _mover.ReduceVerticalVelocity(Time.deltaTime * _playerSpeedReducePower.GetValue());
 
-            if (Mathf.Abs(_mover.YVelocity) < 0.01f)
+            if (Mathf.Abs(_mover.YVelocity) < 0.1f)
             {
                 _player.OnReleaseWallEvent?.Invoke();
 

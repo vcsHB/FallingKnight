@@ -13,7 +13,8 @@ namespace Agents.Players.FSM
             base.Enter();
             _mover.CanManualMove = false;
             _mover.StopImmediately(true);
-            _mover.AddForce(new Vector2(_renderer.FacingDirection * 10f, 0));
+            _mover.SetGravity(false);
+            _mover.AddForce(new Vector2(_renderer.FacingDirection * 15f, 0));
             _player.OnAttackEvent?.Invoke();
 
         }
@@ -23,6 +24,7 @@ namespace Agents.Players.FSM
         {
             base.Exit();
             _mover.CanManualMove = true;
+            _mover.SetGravity(true);
 
         }
 
