@@ -1,9 +1,11 @@
+using System;
+using Agents.Animate;
 using UnityEngine;
 
 namespace Agents.Players
 {
 
-    public class AgentRenderer : MonoBehaviour, IAgentComponent
+    public class AgentRenderer : AnimateRenderer, IAgentComponent
     {
         [field: SerializeField] public float FacingDirection { get; private set; } = 1;
         protected Agent _entity;
@@ -32,6 +34,8 @@ namespace Agents.Players
             if (Mathf.Abs(FacingDirection + normalizeXMove) < 0.5f)
                 Flip();
         }
+
+
     }
 
 }

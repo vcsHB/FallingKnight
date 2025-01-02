@@ -1,3 +1,4 @@
+using Agents.Animate;
 using UnityEngine;
 namespace Agents.Players.FSM
 {
@@ -5,7 +6,7 @@ namespace Agents.Players.FSM
     {
 
         private PlayerAttackController _attackController;
-        public PlayerAirAttackState(Player player, PlayerStateMachine stateMachine, int animationHash) : base(player, stateMachine, animationHash)
+        public PlayerAirAttackState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
             _attackController  =player.GetCompo<PlayerAttackController>();
         }

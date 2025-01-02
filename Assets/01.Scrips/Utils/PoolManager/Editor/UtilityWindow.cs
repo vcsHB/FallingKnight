@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using PlasticGui.WorkspaceWindow.Items;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;

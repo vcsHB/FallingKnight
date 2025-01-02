@@ -1,3 +1,4 @@
+using Agents.Animate;
 using StatSystem;
 using UnityEngine;
 namespace Agents.Players.FSM
@@ -8,7 +9,7 @@ namespace Agents.Players.FSM
         private Stat _playerDashPower;
         private Stat _playerJumpPower;
         private float _currentRollingTime;
-        public PlayerAirRollingState(Player player, PlayerStateMachine stateMachine, int animationHash) : base(player, stateMachine, animationHash)
+        public PlayerAirRollingState(Player player, PlayerStateMachine stateMachine,  AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
             _playerDashPower = player.PlayerStatus.dashPower;
             _playerJumpPower = player.PlayerStatus.jumpPower;

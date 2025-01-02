@@ -1,6 +1,4 @@
-using System;
 using StatSystem;
-using Unity.VisualScripting;
 using UnityEngine;
 namespace Agents.Players
 {
@@ -23,6 +21,7 @@ namespace Agents.Players
         private float _moveSpeedMultiplier, _originalgravity;
         [field: SerializeField] public bool CanManualMove { get; set; } = true;
         private Stat _moveSpeedStat;
+        private AgentRenderer _renderer;
 
         private void Awake()
         {
@@ -36,6 +35,7 @@ namespace Agents.Players
             _moveSpeedMultiplier = 1f;
 
             _moveSpeedStat = _player.Status.moveSpeed;
+            _renderer = _player.GetCompo<AgentRenderer>();
 
         }
 
@@ -69,14 +69,8 @@ namespace Agents.Players
         public void SetMovement(float xMovement)
         {
             _movementX = xMovement;
-            //_renderer.FlipController(xMovement); // 나중에
+            _renderer.FlipController(xMovement); // 나중에
         }
-
-        public void SetFall(bool value)
-        {
-
-        }
-
 
         public void StopImmediately(bool isYtoo = false)
         {

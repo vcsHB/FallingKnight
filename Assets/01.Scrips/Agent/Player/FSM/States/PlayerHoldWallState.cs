@@ -1,3 +1,4 @@
+using Agents.Animate;
 using ObjectManage;
 using StatSystem;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Agents.Players.FSM
         private Stat _playerSpeedReducePower;
 
 
-        public PlayerHoldWallState(Player player, PlayerStateMachine stateMachine, int animationHash) : base(player, stateMachine, animationHash)
+        public PlayerHoldWallState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
             _playerSpeedReducePower = player.PlayerStatus.speedReducePower;
 
