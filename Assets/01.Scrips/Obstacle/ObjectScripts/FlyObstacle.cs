@@ -3,7 +3,7 @@ namespace Obstacles.FlyObstacle
     //Project
     using UnityEngine;
 
-    public class FlyObstacle : Obstacle, IDestroyable
+    public class FlyObstacle : MonoBehaviour, IDestroyable
     {
         [Header("FlyObstacleInfo")]
         [SerializeField] private float moveSpeed         = default;
@@ -45,11 +45,6 @@ namespace Obstacles.FlyObstacle
         public void Destroy()
         {
             gameObject.SetActive(false);
-        }
-
-        public override float GetSpawnPosX()
-        {
-            return SpawnPosXList[0];
         }
     }
 }
