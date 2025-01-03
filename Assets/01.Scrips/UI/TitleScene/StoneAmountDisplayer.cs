@@ -13,6 +13,7 @@ namespace UIManage.TitleScene
         private void Start()
         {
             JsonManager.instance.OnMoneyChangedEvent += SetAmountText;
+            JsonManager.instance.Load();
             SetAmountText(JsonManager.instance.gameData.money);
         }
 
