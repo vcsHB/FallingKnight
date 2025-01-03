@@ -31,7 +31,9 @@ namespace Agents.Players.FSM
         public override void AnimationEndTrigger()
         {
             base.AnimationEndTrigger();
+            _mover.SetGravity(true);
             _stateMachine.ChangeState("Fall");
+
         }
 
 

@@ -26,7 +26,11 @@ namespace SoundManage
         {
 
             _data = DBManager.FromJson<SoundData>("SoundData");
-
+            if(_data == null) 
+            {
+                _data = new SoundData();
+                
+            }
             _bgmSlider.value = _data.bgmVolume;
             HandleChangedBGMSliderValue(_data.bgmVolume);
             _sfxSlider.value = _data.sfxVolume;
@@ -49,6 +53,11 @@ namespace SoundManage
             if (value < -40f)
                 value = -80f;
             _audioMixer.SetFloat("Volume_SFX", value);
+        }
+
+        public void Save()
+        {
+            DBManager.ToJson<SoundData>(_data, "SoundData", true);
         }
     }
 
