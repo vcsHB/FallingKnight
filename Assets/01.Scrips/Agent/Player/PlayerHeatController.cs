@@ -10,9 +10,10 @@ namespace Agents.Players
         [SerializeField] private float _maxHeat = 10f;
         [SerializeField] private float _coolingSpeed = 2f;
         [SerializeField] private float _nonCoolTerm = 2f;
+        [SerializeField] private float _dropAttackNeedHeat = 0.7f;
         private float _currentNonCooltime = 0f;
 
-        public bool CanDropAttack => _currentHeat > 8f;
+        public bool CanDropAttack => _currentHeat / _maxHeat > _dropAttackNeedHeat;
 
         private void Update()
         {
