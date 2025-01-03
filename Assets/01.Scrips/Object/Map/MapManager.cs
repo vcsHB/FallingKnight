@@ -95,6 +95,7 @@ namespace Map.MapManager
                     poolingQueueList[mapKind].Enqueue(newMapTile);
 
                     newMapTile.GetComponent<MapTile>().followCam = followCam;
+                    newMapTile.GetComponent<MapTile>().SetObstaclePos();
                     newMapTile.SetActive(false);
                 }
             }
@@ -111,11 +112,12 @@ namespace Map.MapManager
 
                 lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
 
-                player.position = new Vector2(player.position.x, lastMapTile.position.y - offset);
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 0.2f);
             }
-
-            
-            player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y - offset);
+            else
+            {
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 1.2f);
+            }
 
             while (totalMapTileNumber > nextMapTileNumber)
             {
@@ -153,12 +155,6 @@ namespace Map.MapManager
                 }
 
                 yield return null;
-            }
-
-            while (nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
-            {
-                poolingQueueList[mapKind].Enqueue(poolingQueueList[mapKind].Dequeue());
-                nextMapTileNumber++;
             }
 
             ChangeStage();

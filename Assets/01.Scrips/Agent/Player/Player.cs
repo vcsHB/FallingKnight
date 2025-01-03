@@ -52,7 +52,7 @@ namespace Agents.Players
         }
 
         
-        private void HandlePlayrHit()
+        public void HandlePlayrHit()
         {
             if(!StateMachine.CurrentStateName.Equals("AirRolling"))
                 StateMachine.ChangeState("AirRolling");

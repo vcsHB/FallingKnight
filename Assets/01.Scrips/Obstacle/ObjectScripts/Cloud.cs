@@ -3,6 +3,7 @@ namespace Obstacles.Cloud
     
     //Project
     using UnityEngine;
+    using Agents.Players;
 
     public class Cloud : Obstacle
     {
@@ -18,13 +19,8 @@ namespace Obstacles.Cloud
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                Debug.Log("½ÇÇà");
-                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(jumpDirection * JumpPower, ForceMode2D.Impulse);
+                collision.gameObject.GetComponent<Player>().HandlePlayrHit();
             }
-
-
         }
     }
 }
