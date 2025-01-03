@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cac31d7a5b8358544bf354dbf2c4659c
+guid: 9c41771507c38554987d17c2b9caacdc
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -149,10 +149,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9cf8bd2e0590c384cafac7c43d22294c
-      internalID: -1326134918
+      spriteID: 2b073038feddb9c10800000000000000
+      internalID: 2061485275217096882
       vertices: []
       indices: 
       edges: []
@@ -171,10 +171,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e019cbcdf590fdc4994e3afa535b850f
-      internalID: -1824150167
+      spriteID: 692bd6d49a167d1e0800000000000000
+      internalID: -2173160915406572906
       vertices: []
       indices: 
       edges: []
@@ -193,10 +193,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e00caeaa0f6a11c48909ab4555ba857a
-      internalID: 897479243
+      spriteID: a18d4925978306820800000000000000
+      internalID: 2909387453009025050
       vertices: []
       indices: 
       edges: []
@@ -215,10 +215,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1c865f505781a514c8271fddc5d503fd
-      internalID: -741896168
+      spriteID: 589c61ace8e9ccef0800000000000000
+      internalID: -86519956713846395
       vertices: []
       indices: 
       edges: []
@@ -227,7 +227,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fa7c2e48891f7114c8aea87a478dc9fb
+    spriteID: e6d05780648a3d944883e0e60417c8eb
     internalID: 0
     vertices: []
     indices: 
@@ -237,10 +237,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      obstacle_shooter_1-Sheet_0: -1326134918
-      obstacle_shooter_1-Sheet_1: -1824150167
-      obstacle_shooter_1-Sheet_2: 897479243
-      obstacle_shooter_1-Sheet_3: -741896168
+      obstacle_shooter_1-Sheet_0: 2061485275217096882
+      obstacle_shooter_1-Sheet_1: -2173160915406572906
+      obstacle_shooter_1-Sheet_2: 2909387453009025050
+      obstacle_shooter_1-Sheet_3: -86519956713846395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
