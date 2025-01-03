@@ -13,6 +13,8 @@ public class MapTile : MonoBehaviour
 
     public void SetActiveTile(bool value)
     {
+        gameObject.SetActive(value);
+        
         if(value)
         {
             foreach (var obstacle in obstacles)
@@ -20,9 +22,6 @@ public class MapTile : MonoBehaviour
                 obstacle.ResetObstacle();
             }
         }
-
-        gameObject.SetActive(value);
-
     }
 
     void Update()

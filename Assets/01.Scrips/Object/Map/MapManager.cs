@@ -21,9 +21,11 @@ namespace Map.MapManager
         [Header("StageChangePanel")]
         [SerializeField] private StageChangePanel stageChangePanel;
 
-        [SerializeField] private const float offset = 1.0f;
-        public const int    totalMapTileNumber = 20;
+        [SerializeField] private const float offset = 20.0f;
+        public const int    totalMapTileNumber = 10;
         public MapData      currentMapData;
+
+        [SerializeField] private Transform lastMapTile = null;
 
         /// <summary>
         /// 맵타일 큐를 담은 리스트
@@ -65,6 +67,8 @@ namespace Map.MapManager
             
             currentMapData = mapDatas.mapDataArray[currentMapId];
 
+            stageChangePanel.Open();
+
             StartCoroutine(CoSpawnMap());
         }
 
@@ -75,7 +79,7 @@ namespace Map.MapManager
 
             float cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize;
 
-            #region 큐에 오브젝트 할당 및 스크롤링 시작을 위한 처음 타일 생성
+            // 큐에 오브젝트 할당 및 스크롤링 시작을 위한 처음 타일 생성
             if (poolingQueueList[mapKind].Count < currentMapData.mapTileArray.Length)
             {
                 poolingQueueList[mapKind].Clear();
@@ -88,16 +92,20 @@ namespace Map.MapManager
                     newMapTile.SetActive(false);
                 }
             }
-            GameObject startMapTile = poolingQueueList[mapKind].Dequeue();
-            startMapTile.transform.position = new Vector2(0f, cameraBottomPosY - 10.0f);
-            // nextMapTile 활성화
-            startMapTile.GetComponent<MapTile>().SetActiveTile(true);
-            poolingQueueList[mapKind].Enqueue(startMapTile);
 
-            nextMapTileNumber++;
-            #endregion
+            if (lastMapTile == null)
+            {
+                GameObject startMapTile = poolingQueueList[mapKind].Dequeue();
+                startMapTile.transform.position = new Vector2(0f, cameraBottomPosY - 10.0f);
+                // nextMapTile 활성화
+                startMapTile.GetComponent<MapTile>().SetActiveTile(true);
+                poolingQueueList[mapKind].Enqueue(startMapTile);
 
-            Transform lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
+                nextMapTileNumber++;
+
+                lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
+            }
+            
             while (totalMapTileNumber > nextMapTileNumber)
             {
                 cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표
@@ -135,8 +143,6 @@ namespace Map.MapManager
 
                 yield return null;
             }
-
-            stageChangePanel.Open();
 
             while (nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
             {
