@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Object
+  - Wall
+  - Deadbody
+  - Obstacle
+  - Collector
   - 
   - 
   - 
@@ -41,3 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 3993722003
+    locked: 0
+  - name: Enemy
+    uniqueID: 4002222955
+    locked: 0
+  - name: Object
+    uniqueID: 4019106105
+    locked: 0
+  - name: VFX
+    uniqueID: 3816799273
+    locked: 0
+  - name: UI
+    uniqueID: 3861369609
+    locked: 0
+  m_RenderingLayers:
+  - Default
