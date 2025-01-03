@@ -20,9 +20,9 @@ namespace Map.MapManager
 
         [Header("기타")]
         [SerializeField] private const float offset = 1.0f;
-        public float    fallingSpeed = 5.0f;
-        public bool     isScroll;
-        public MapData  currentMapData;
+        public float        fallingSpeed = 5.0f;
+        public const int    totalMapTileNumber = 20;
+        public MapData      currentMapData;
 
         /// <summary>
         /// 맵타일 큐를 담은 리스트
@@ -55,20 +55,19 @@ namespace Map.MapManager
 
         void ChangeStage()
         {
-            // 임시로 그냥 랜덤으로 작업, 후에 가중치를 두는 등의 변경이 있을 수 있음.
-            int currentMapId = 1;/*Random.Range(0, mapDatas.mapDataList.Length);*/
+            int currentMapId = 0;
+
+            do
+            {
+                currentMapId = Random.Range(0, mapDatas.mapDataArray.Length);
+            } while (currentMapData == mapDatas.mapDataArray[currentMapId]);
             
             currentMapData = mapDatas.mapDataArray[currentMapId];
 
-            SpawnMapPrefab();
+            StartCoroutine(CoSpawnMap());
         }
 
-        void SpawnMapPrefab()
-        {
-            StartCoroutine(CoSpawnMapPrefab());
-        }
-
-        IEnumerator CoSpawnMapPrefab()
+        IEnumerator CoSpawnMap()
         {
             int nextMapTileNumber = 0;
             int mapKind = (int)currentMapData.mapKind; // enum으로 현재 맵의 종류 찾기
@@ -95,7 +94,6 @@ namespace Map.MapManager
             poolingQueueList[mapKind].Enqueue(startMapTile);
 
             nextMapTileNumber++;
-            if (nextMapTileNumber >= currentMapData.mapTileArray.Length) nextMapTileNumber = 0;
             #endregion
 
             #region 풀링을 위한 장애물 생성
@@ -111,8 +109,7 @@ namespace Map.MapManager
             #endregion
 
             Transform lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
-            isScroll = true;
-            while (isScroll)
+            while (totalMapTileNumber > nextMapTileNumber)
             {
                 cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표
                 if (cameraBottomPosY - offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 - offset 보다 커지면 다음 맵타일 생성
@@ -130,7 +127,7 @@ namespace Map.MapManager
                     else // nextMapTile이 활성화되어 있을 경우
                     {
                         // 프리팹으로 새 맵타일 생성 후, 배치
-                        GameObject prefab = Instantiate(currentMapData.mapTileArray[nextMapTileNumber],
+                        GameObject prefab = Instantiate(currentMapData.mapTileArray[nextMapTileNumber % currentMapData.mapTileArray.Length],
                                                                 new Vector2(0f, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y), 
                                                                 Quaternion.identity);
 
@@ -142,7 +139,7 @@ namespace Map.MapManager
 
                     poolingQueueList[mapKind].Enqueue(nextMapTile); // nextMapTile을 poolingQueueList[mapKind]에 Enqueue하면서 풀링이 되도록 함.
 
-                    if(nextMapTileNumber != 0 && poolingObstacleList[mapKind].Count % nextMapTileNumber == 0)
+                    if(nextMapTileNumber != 0 && nextMapTileNumber % poolingObstacleList[mapKind].Count == 0)
                     {
                         GameObject obstacle = poolingObstacleList[mapKind][Random.Range(0, poolingObstacleList[mapKind].Count)];
                         obstacle.transform.position = new Vector2(obstacle.GetComponent<Obstacle>().GetSpawnPosX(), cameraBottomPosY - offset);
@@ -150,7 +147,6 @@ namespace Map.MapManager
                     }
 
                     nextMapTileNumber++; // 새 맵타일을 생성할 경우를 위해서 다음에 올 맵타일이 몇 번째 맵타일인지 계산함.
-                    if (nextMapTileNumber >= currentMapData.mapTileArray.Length) nextMapTileNumber = 0;
                 }
 
                 yield return null;
@@ -166,6 +162,8 @@ namespace Map.MapManager
             {
                 poolingObstacleList[mapKind][i].SetActive(false); // 스테이지가 끝나면 모든 장애물 비활성화
             }
+
+            ChangeStage();
         }
     }
 }
