@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ef2e17d012d141bf43ab6da5689cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPosXList:
+  - -3
+  - 4
   oppenBookDistance: 3
   checkLayer:
     serializedVersion: 2
