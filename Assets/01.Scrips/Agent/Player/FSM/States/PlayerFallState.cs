@@ -19,7 +19,6 @@ namespace Agents.Players.FSM
         public override void UpdateState()
         {
             base.UpdateState();
-            Debug.Log("Fall Update");
             float xInput = _player.PlayerInput.InputDirection.x;
             if(Mathf.Abs(xInput) > 0)
             {
