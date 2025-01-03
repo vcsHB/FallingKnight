@@ -207,7 +207,7 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   damage: 0
   moveSpeed: 5
-  moveDistance: 10
+  moveDistance: 15
 --- !u!114 &2085647459591077887
 MonoBehaviour:
   m_ObjectHideFlags: 0

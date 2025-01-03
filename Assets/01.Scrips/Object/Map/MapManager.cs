@@ -95,6 +95,7 @@ namespace Map.MapManager
                     poolingQueueList[mapKind].Enqueue(newMapTile);
 
                     newMapTile.GetComponent<MapTile>().followCam = followCam;
+                    newMapTile.GetComponent<MapTile>().SetObstaclePos();
                     newMapTile.SetActive(false);
                 }
             }
@@ -153,12 +154,6 @@ namespace Map.MapManager
                 }
 
                 yield return null;
-            }
-
-            while (nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
-            {
-                poolingQueueList[mapKind].Enqueue(poolingQueueList[mapKind].Dequeue());
-                nextMapTileNumber++;
             }
 
             ChangeStage();

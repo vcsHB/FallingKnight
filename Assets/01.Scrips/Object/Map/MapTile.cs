@@ -10,11 +10,16 @@ public class MapTile : MonoBehaviour
 
     [SerializeField] Obstacle[] obstacles;
 
+    public void SetObstaclePos()
+    {
+        foreach (var obstacle in obstacles)
+        {
+            obstacle.SetPos();
+        }
+    }
 
     public void SetActiveTile(bool value)
     {
-        gameObject.SetActive(value);
-        
         if(value)
         {
             foreach (var obstacle in obstacles)
@@ -22,6 +27,8 @@ public class MapTile : MonoBehaviour
                 obstacle.ResetObstacle();
             }
         }
+
+        gameObject.SetActive(value);
     }
 
     void Update()

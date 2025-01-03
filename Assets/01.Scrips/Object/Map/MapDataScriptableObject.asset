@@ -18,6 +18,9 @@ MonoBehaviour:
     - {fileID: 4440830626203757850, guid: b5e05d4e889986e4db84e245ccc20daa, type: 3}
     - {fileID: 4440830626203757850, guid: 785192468fb9d414bb086ce71a879a0f, type: 3}
     - {fileID: 4440830626203757850, guid: 605035da2659ebb4ab8b648ef8e49d52, type: 3}
+    - {fileID: 4440830626203757850, guid: d274db8c71ea7db468cf227e209fa6a0, type: 3}
+    - {fileID: 4440830626203757850, guid: 403ddd0bef4ff3c4196f6c14d4df8b3b, type: 3}
+    - {fileID: 4440830626203757850, guid: 9d85b0522306f2849ac0279ef341b768, type: 3}
   - mapKind: 1
     mapTileArray:
     - {fileID: 6898053860815781549, guid: 8c4a3510f3ffa5841a068e9e1efb4b28, type: 3}
