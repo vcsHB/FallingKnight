@@ -73,7 +73,7 @@ namespace Obstacles.Shooter
 
         public void Destroy()
         {
-            Debug.Log("ÆÄ±«");
+            gameObject.SetActive(false);
         }
 
         private void OnDrawGizmos()

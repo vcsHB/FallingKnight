@@ -76,11 +76,9 @@ namespace Obstacles.Laserbook
             isShot = true;
         }
 
-
-
         public void Destroy()
         {
-            Debug.Log("ÆÄ±«");
+            gameObject.SetActive(false);
         }
     }
 }
