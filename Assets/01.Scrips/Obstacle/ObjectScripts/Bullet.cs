@@ -17,7 +17,7 @@ namespace Obstacles.Bullet
 
         private void FixedUpdate()
         {
-            transform.Translate(Vector2.right * 5f * Time.fixedDeltaTime);
+            transform.Translate(Vector2.right * bulletSpeed * Time.fixedDeltaTime);
         }
     }
 }

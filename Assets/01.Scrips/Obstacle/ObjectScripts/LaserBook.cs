@@ -7,12 +7,6 @@ namespace Obstacles.Laserbook
     //Project
     using UnityEngine;
 
-    public enum LaserFSM
-    {
-        Idle,
-        Shot,
-    }
-
     public class LaserBook : MonoBehaviour, IDestroyable
     {
         [Header("LaserBookInfo")]
@@ -27,36 +21,38 @@ namespace Obstacles.Laserbook
         //레이저 유지시간
         [SerializeField] private float laserMaintenanceTime     = default;  
 
-        private LaserFSM laserState = LaserFSM.Idle;
-
         private Animator anim = null;
-        private float timer = default;
+        private float coolTimeTimer = default;
 
         private bool isShot = default;
 
         private void Start()
         {
             anim = GetComponent<Animator>();
-            StartCoroutine(Co_ShootingCycle());
-            isShot = false;
         }
 
         private void Update()
         {
-            switch (laserState)
+            coolTimeTimer += Time.deltaTime;
+
+            if(coolTimeTimer >= laserCoolTime)
             {
-                case LaserFSM.Idle:
-                    {
-                        break;
-                    }
-                case LaserFSM.Shot:
-                    {
-                        if (isShot)
-                        {
-                            ShotLaser();
-                        }
-                        break;
-                    }
+                anim.SetBool("Attack", true);
+                Debug.Log("발사");
+            }
+
+            if (coolTimeTimer >= laserCoolTime + laserMaintenanceTime + anim.GetCurrentAnimatorStateInfo(0).length)
+            {
+                Debug.Log("멈춰");
+                anim.SetBool("Attack", false);
+                isShot = false;
+
+                coolTimeTimer = 0;
+            }
+
+            if (isShot)
+            {
+                ShotLaser();
             }
         }
 
@@ -75,15 +71,12 @@ namespace Obstacles.Laserbook
             }
         }
 
-        private IEnumerator Co_ShootingCycle()
+        public void ShootTrigger()
         {
-            laserState = LaserFSM.Idle;
-            yield return new WaitForSeconds(laserCoolTime);
-            laserState = LaserFSM.Shot;
             isShot = true;
-            yield return new WaitForSeconds(laserMaintenanceTime);
-            isShot = false;
         }
+
+
 
         public void Destroy()
         {
