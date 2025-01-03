@@ -3,6 +3,7 @@ namespace Obstacles.FlyObstacle
     using Combat;
     //Project
     using UnityEngine;
+    using static UnityEditor.PlayerSettings;
 
     public class FlyObstacle : Obstacle, IDestroyable
     {
@@ -18,13 +19,15 @@ namespace Obstacles.FlyObstacle
 
         private bool isTrun              = default;
 
+        private Quaternion rot = Quaternion.identity;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             sr = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             isTrun = false;
             startPosition = transform.position;
@@ -71,6 +74,20 @@ namespace Obstacles.FlyObstacle
             {
                 hit.ApplyDamage(damage);
             }
+        }
+
+        public override void SetPos()
+        {
+            base.SetPos();
+
+            rot = transform.localRotation;
+        }
+
+        public override void ResetObstacle()
+        {
+            transform.localPosition = pos;
+            transform.localRotation = rot;
+            gameObject.SetActive(true);
         }
     }
 }
