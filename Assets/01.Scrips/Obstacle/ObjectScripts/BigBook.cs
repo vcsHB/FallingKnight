@@ -49,6 +49,11 @@ namespace Obstacles.Bigbook
             
             Gizmos.DrawWireSphere(transform.position, checkRadius);
         }
+
+        public override float GetSpawnPosX()
+        {
+            return base.GetSpawnPosX();
+        }
     }
 }
 
