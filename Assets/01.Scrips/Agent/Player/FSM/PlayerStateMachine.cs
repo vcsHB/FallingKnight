@@ -8,8 +8,9 @@ namespace Agents.Players.FSM
 
     public class PlayerStateMachine
     {
-        private Dictionary<string, PlayerState> _stateDictionary = new ();
+        private Dictionary<string, PlayerState> _stateDictionary = new();
         public PlayerState CurrentState { get; private set; }
+        public string CurrentStateName { get; private set; }
         private Player _player;
         public PlayerStateMachine(Player player)
         {
@@ -27,6 +28,7 @@ namespace Agents.Players.FSM
             AddState("AirAttack", _player.AttackParam);
             AddState("DropAttack", _player.DropAttackParam);
 
+            CurrentStateName = firstState;
             if (_stateDictionary.TryGetValue(firstState, out PlayerState state))
             {
                 CurrentState = state;
@@ -52,8 +54,14 @@ namespace Agents.Players.FSM
             {
                 CurrentState.Exit();
                 CurrentState = state;
+                CurrentStateName = name;
                 CurrentState.Enter();
             }
+        }
+
+        public string GetCurrentState()
+        {
+            return CurrentStateName;
         }
 
 
