@@ -1,5 +1,6 @@
 namespace Obstacles.Bigbook
 {
+    using Combat;
     //UnityEngine
     using UnityEngine;
 
@@ -41,6 +42,14 @@ namespace Obstacles.Bigbook
             }
 
             return false;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out IDamageable hit))
+            {
+                hit.ApplyDamage(damage);
+            }
         }
 
         private void OnDrawGizmos()

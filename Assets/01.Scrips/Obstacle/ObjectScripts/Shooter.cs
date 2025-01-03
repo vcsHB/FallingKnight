@@ -1,12 +1,13 @@
 namespace Obstacles.Shooter
 {
+    using Combat;
     //System
     using System.Collections;
 
     //Project
     using UnityEngine;
 
-    public class Shooter : MonoBehaviour, IDestroyable
+    public class Shooter : Obstacle, IDestroyable
     {
         [Header("ShooterInfo")]
         [SerializeField] private Transform firePosition  = default;
@@ -74,6 +75,14 @@ namespace Obstacles.Shooter
         public void Destroy()
         {
             gameObject.SetActive(false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out IDamageable hit))
+            {
+                hit.ApplyDamage(damage);
+            }
         }
 
         private void OnDrawGizmos()
