@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 487333467248315640}
   - component: {fileID: 6059400829536873061}
   - component: {fileID: 5784383487288237534}
-  m_Layer: 11
+  - component: {fileID: -4645161083699079296}
+  m_Layer: 7
   m_Name: BigBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,11 +171,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3ef2e17d012d141bf43ab6da5689cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPosXList:
-  - -3
-  - 4
+  pos: {x: 0, y: 0, z: 0}
   oppenBookDistance: 3
   checkLayer:
     serializedVersion: 2
     m_Bits: 64
   checkRadius: 15
+--- !u!114 &-4645161083699079296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143858742272669444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa033c7adca2f94389ee642326e076a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDieEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8143858742272669444}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHealthDecreaseEvent:
+    m_PersistentCalls:
+      m_Calls: []

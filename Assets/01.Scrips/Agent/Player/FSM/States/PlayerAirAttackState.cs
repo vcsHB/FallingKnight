@@ -14,7 +14,8 @@ namespace Agents.Players.FSM
             _mover.CanManualMove = false;
             _mover.StopImmediately(true);
             _mover.SetGravity(false);
-            _mover.AddForce(new Vector2(_renderer.FacingDirection * 12f, 0));
+            _mover.AddForce(new Vector2(_renderer.FacingDirection * 30f, 0));
+            //_mover.AddForce(new Vector2(0, -40f));
             _player.OnAttackEvent?.Invoke();
 
         }
@@ -32,8 +33,8 @@ namespace Agents.Players.FSM
         {
             base.AnimationEndTrigger();
             _mover.SetGravity(true);
-            _mover.StopImmediately(true);
-            _stateMachine.ChangeState("AirRolling");
+            _mover.StopImmediately(false);
+            _stateMachine.ChangeState("Fall");
 
         }
 

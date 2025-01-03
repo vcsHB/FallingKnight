@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 3
   _reducePower: 4
-  _gravityScale: 2.01
+  _gravityScale: 1.5
   _wallLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -328,8 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHeat: 0
   _maxHeat: 2
-  _coolingSpeed: 0.5
-  _nonCoolTerm: 2
+  _coolingSpeed: 0.2
+  _nonCoolTerm: 3
   _dropAttackNeedHeat: 0.7
 --- !u!1 &707594720764645728
 GameObject:
@@ -5249,7 +5249,7 @@ Transform:
   m_GameObject: {fileID: 1013348452153844743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.811, y: -0.147, z: 0}
+  m_LocalPosition: {x: 0.811, y: -1.409, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5276,9 +5276,9 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 2432
   _targetMaxAmount: 3
-  _boxSize: {x: 3, y: 2}
+  _boxSize: {x: 3, y: 2.65}
 --- !u!114 &7629463483270123330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10154,7 +10154,7 @@ Transform:
   m_GameObject: {fileID: 1995071782506692589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.221, y: -0.332, z: 0}
+  m_LocalPosition: {x: 0.221, y: -1.676, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10181,9 +10181,9 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 2432
   _targetMaxAmount: 3
-  _boxSize: {x: 3, y: 2}
+  _boxSize: {x: 3, y: 2.65}
 --- !u!114 &7631251535361777188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35336,7 +35336,7 @@ Transform:
   m_GameObject: {fileID: 6403228235579868263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0}
+  m_LocalPosition: {x: 0, y: -1.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35400,9 +35400,9 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 2432
   _targetMaxAmount: 3
-  _boxSize: {x: 2.5, y: 0.7}
+  _boxSize: {x: 2.5, y: 2.17}
 --- !u!114 &11144835217598515
 MonoBehaviour:
   m_ObjectHideFlags: 0

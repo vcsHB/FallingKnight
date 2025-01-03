@@ -21,6 +21,7 @@ namespace Agents.Players.FSM
 
         public override void Enter()
         {
+            _mover.AddForce(new Vector2(0, -1f));
             base.Enter();
             _player.PlayerInput.OnJumpEvent += HandleDash;
             _player.OnHoldWallEvent?.Invoke();
@@ -40,7 +41,7 @@ namespace Agents.Players.FSM
             if(_isStopped) return;
             _mover.ReduceVerticalVelocity(Time.deltaTime * _playerSpeedReducePower.GetValue());
 
-            if (Mathf.Abs(_mover.YVelocity) < 0.1f)
+            if (Mathf.Abs(_mover.YVelocity) < 0.05f)
             {
                 _player.OnReleaseWallEvent?.Invoke();
                 _mover.StopImmediately(true);

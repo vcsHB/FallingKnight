@@ -751,7 +751,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 12
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1174,7 +1174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23552,10 +23552,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1703807156695047727, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
-      propertyPath: _maxHeat
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4346928494463511088, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: _stoneCollectText
       value: 
@@ -23599,10 +23595,6 @@ PrefabInstance:
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439349730430431155, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
-      propertyPath: _gravityScale
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
