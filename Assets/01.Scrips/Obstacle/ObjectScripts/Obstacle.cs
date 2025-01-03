@@ -5,11 +5,16 @@ namespace Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        [SerializeField] protected List<float> SpawnPosXList;
+        [SerializeField] Vector3 pos;
 
-        public virtual float GetSpawnPosX()
+        private void Awake()
         {
-            return SpawnPosXList[Random.Range(0, SpawnPosXList.Count)];
+            pos = transform.position;
+        }
+
+        private void OnEnable()
+        {
+            transform.position = pos;
         }
     }
 }

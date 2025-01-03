@@ -18,7 +18,5 @@ namespace Map.MapData
         public MapKind mapKind;
 
         public GameObject[] mapTileArray;
-
-        public GameObject[] ObstacleArray;
     }
 }
