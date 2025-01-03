@@ -661,6 +661,8 @@ MonoBehaviour:
   _stoneCollector: {fileID: 848539941}
   _gameOverPanel: {fileID: 1042077898}
   _waitTerm: 2
+  _playerInput: {fileID: 11400000, guid: 9b5f2fbb43ef87143a73760405a2ac8e, type: 2}
+  _uiInputReader: {fileID: 11400000, guid: 1685b81d1d8c2244a8d5304866283ccc, type: 2}
 --- !u!4 &922428351
 Transform:
   m_ObjectHideFlags: 0
@@ -698,6 +700,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b4a7bf41ff89f43869351d0eece696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1155085407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4753509977259262911, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
+  m_PrefabInstance: {fileID: 5951555787538877837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1155085409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8609858214539384747, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
+  m_PrefabInstance: {fileID: 5951555787538877837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155085407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1155085411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155085407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1155085409}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 922428350}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: BackToLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1186788672 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5547239970102148110, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
@@ -809,7 +883,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 12
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1096,7 +1170,7 @@ Transform:
   m_GameObject: {fileID: 1823098981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.886789, y: 37.0796, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1165,7 +1239,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23208,6 +23282,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1942285177537192606, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2170171480452936768, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
       propertyPath: m_Camera
       value: 
@@ -23455,7 +23533,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4753509977259262911, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1155085411}
   m_SourcePrefab: {fileID: 100100000, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
 --- !u!1001 &7977626947002989579
 PrefabInstance:
@@ -23473,6 +23554,34 @@ PrefabInstance:
       propertyPath: _stoneCollectText
       value: 
       objectReference: {fileID: 1186788672}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 922428350}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285758332332465994, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: OnDieEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

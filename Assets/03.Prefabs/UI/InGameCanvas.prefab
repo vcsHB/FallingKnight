@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1268057117473279255, guid: 740f17a042865244789cdc731784cd5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5916,7 +5916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5BB\uC740 \uC7AC\uD654 : 1000\uAC1C"
+  m_text: "\uC5BB\uC740 \uB9C8\uC11D : 1000\uAC1C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 295876a75fec25e4aa7be3b262e2e7aa, type: 2}
   m_sharedMaterial: {fileID: 4497266456213962395, guid: 295876a75fec25e4aa7be3b262e2e7aa, type: 2}
@@ -8737,7 +8737,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6853565610608822958}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -9249,7 +9249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 931351ba0c4dd9e47bbc9836634da88a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

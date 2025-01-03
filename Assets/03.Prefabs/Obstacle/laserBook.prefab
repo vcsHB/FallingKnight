@@ -5081,8 +5081,8 @@ MonoBehaviour:
   _fireVFX: {fileID: 2998531490133225831}
   _hitVFX: {fileID: 4885435446037616313}
   laserYPos: 1
-  laserDistance: 10
-  _laserWidth: {x: 1, y: 1}
+  laserDistance: 20
+  _laserWidth: {x: 1, y: 0.3}
   laserCoolTime: 0.5
   laserMaintenanceTime: 1
 --- !u!114 &9162043954063580263
