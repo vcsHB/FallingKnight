@@ -72,10 +72,10 @@ namespace Managers.Jsonmanager
 
         //UpgradeTypes
         public int healthLevel          = 0;
-        public int AttackDamageLevel    = 0;
-        public int MoveSpeedLevel       = 0;
-        public int DefenseLevel         = 0;
-        public int AttackSpeedLevel     = 0;
+        public int attackDamageLevel    = 0;
+        public int moveSpeedLevel       = 0;
+        public int defenseLevel         = 0;
+        public int attackSpeedLevel     = 0;
     }
 }
 
