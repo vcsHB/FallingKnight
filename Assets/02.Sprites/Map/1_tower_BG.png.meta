@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 920675b6cee54ff40817a36437569c5b
+guid: 2cab056324ef84744849fccb8ac2d824
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1591964034235911416
-    second: obstacle_flyingBook-Sheet_0
-  - first:
-      213: -997682891330234093
-    second: obstacle_flyingBook-Sheet_1
-  - first:
-      213: -736167919806261028
-    second: obstacle_flyingBook-Sheet_2
-  - first:
-      213: -6482677074621698819
-    second: obstacle_flyingBook-Sheet_3
+      213: -6088652580088184318
+    second: 1_tower_BG_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +113,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: obstacle_flyingBook-Sheet_0
+      name: 1_tower_BG_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 25
-        height: 29
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 803bb2c352538e9e0800000000000000
-      internalID: -1591964034235911416
+      spriteID: 308ae178846929c4f93f8b965c616c5d
+      internalID: 924630729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstacle_flyingBook-Sheet_1
+      name: 1_tower_BG_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 1
-        width: 25
-        height: 28
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 319d6cf32b48722f0800000000000000
-      internalID: -997682891330234093
+      spriteID: 3aed7daf0fb7b8c4d8cb32b3b51c5ea1
+      internalID: -1824047019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstacle_flyingBook-Sheet_2
+      name: 1_tower_BG_2
       rect:
         serializedVersion: 2
-        x: 67
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c36bb6eced92a4db88da32abad5aec
+      internalID: -361688095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_tower_BG_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dd6c30abdbb2147bb007ba0c62c1ee
+      internalID: 1482431003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_tower_BG_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb14d8b9375116a439fc28d10560b787
+      internalID: -1096489625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_tower_BG_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78299cb29df225c4dae523d8168039cd
+      internalID: 2114470954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_tower_BG_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 25
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cd8d8e46d2b98c5f0800000000000000
-      internalID: -736167919806261028
+      spriteID: 9ccdfe044f6873c409ca48fdd5e8f509
+      internalID: -1675187356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstacle_flyingBook-Sheet_3
+      name: 1_tower_BG_7
       rect:
         serializedVersion: 2
-        x: 99
-        y: 1
-        width: 25
-        height: 28
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dfcea9d1c87e806a0800000000000000
-      internalID: -6482677074621698819
+      spriteID: edde46e485453d644ad94e44bd825a1c
+      internalID: 251962977
       vertices: []
       indices: 
       edges: []
@@ -213,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 096feb39c0088ba4895bd12748efcb09
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +302,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      obstacle_flyingBook-Sheet_0: -1591964034235911416
-      obstacle_flyingBook-Sheet_1: -997682891330234093
-      obstacle_flyingBook-Sheet_2: -736167919806261028
-      obstacle_flyingBook-Sheet_3: -6482677074621698819
+      1_tower_BG_0: 924630729
+      1_tower_BG_1: -1824047019
+      1_tower_BG_2: -361688095
+      1_tower_BG_3: 1482431003
+      1_tower_BG_4: -1096489625
+      1_tower_BG_5: 2114470954
+      1_tower_BG_6: -1675187356
+      1_tower_BG_7: 251962977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
