@@ -12,6 +12,8 @@ namespace Agents.Players
         [SerializeField] private float _nonCoolTerm = 2f;
         private float _currentNonCooltime = 0f;
 
+        public bool CanDropAttack => _currentHeat > 8f;
+
         private void Update()
         {
             _currentNonCooltime += Time.deltaTime;
@@ -21,6 +23,12 @@ namespace Agents.Players
                 _currentHeat -= _coolingSpeed * Time.deltaTime;
                 InvokeHeatChanged();
             }
+        }
+
+        public void ResetHeat()
+        {
+            _currentHeat = 0f;
+            InvokeHeatChanged();
         }
         public void GainHeat()
         {

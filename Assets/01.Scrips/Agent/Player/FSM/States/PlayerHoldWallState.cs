@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Agents.Animate;
 using ObjectManage;
 using StatSystem;
