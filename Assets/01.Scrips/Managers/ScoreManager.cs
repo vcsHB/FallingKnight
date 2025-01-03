@@ -12,6 +12,7 @@ namespace Managers
         [SerializeField] private float _scoreUpdateTerm = 0.2f;
         [SerializeField] private ScoreDisplayer _scoreDisplayer;
         private float _currentCountTime;
+        public int CurrentScore => _currentScore;
 
         private void Update()
         {

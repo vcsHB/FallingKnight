@@ -59,11 +59,5 @@ namespace Agents.Players.FSM
             }
         }
 
-        public string GetCurrentState()
-        {
-            return CurrentStateName;
-        }
-
-
     }
 }

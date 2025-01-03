@@ -1,6 +1,7 @@
 using System.Collections;
 using Agents.Players;
 using InputSystem;
+using Managers.Jsonmanager;
 using UIManage.InGame;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private StoneCollector _stoneCollector;
+        [SerializeField] private ScoreManager _scoreManager;
         [SerializeField] private GameOverPanel _gameOverPanel;
         [SerializeField] private float _waitTerm;
         [SerializeField] private PlayerInput _playerInput;
@@ -34,6 +36,18 @@ namespace Managers
         {
             Time.timeScale = 0f;
             SetInputControl(false);
+
+            int stoneAmount = _stoneCollector.CollectedAmount;
+            int score = _scoreManager.CurrentScore;
+            JsonManager.instance.AddMoney(stoneAmount);
+            bool isNewScore = JsonManager.instance.gameData.bestSocre < score;
+            if(isNewScore)
+            {
+                JsonManager.instance.gameData.bestSocre = score;
+            }
+            JsonManager.instance.Save();
+
+            _gameOverPanel.Initialize(stoneAmount, score, isNewScore);
             _gameOverPanel.Open();
         }
 
@@ -45,10 +59,10 @@ namespace Managers
         private IEnumerator BackToLobbyCoroutine()
         {
             // 페이드 효과
-            yield return new WaitForSeconds(_waitTerm);
             Time.timeScale = 1f;
+            yield return new WaitForSeconds(_waitTerm);
             SetInputControl(true);
-            SceneManager.LoadScene("LobbyScene"); // 씬이름 안맞으면 바꾸기
+            SceneManager.LoadScene("TitleScene"); // 씬이름 안맞으면 바꾸기
         }
 
         public void SetInputControl(bool value)

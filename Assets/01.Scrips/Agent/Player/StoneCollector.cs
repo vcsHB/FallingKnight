@@ -9,6 +9,7 @@ namespace Agents.Players
     {
         [SerializeField] private int _collectAmount = 0;
         [SerializeField] private TextMeshProUGUI _stoneCollectText;
+        public int CollectedAmount => _collectAmount;
 
 
         private Player _player;

@@ -25,9 +25,17 @@ namespace Managers
 
         private IEnumerator MoveToGameSceneCoroutine()
         {
+            WaitForSeconds ws = new WaitForSeconds(_moveToGameSceneTerm / 2);
+            yield return ws;
             _fadePanel.Open();
-            yield return new WaitForSeconds(_moveToGameSceneTerm);
+            yield return ws;
             SceneManager.LoadScene("VCS_Scene");
+        }
+
+
+        public void HandleGameQuit()
+        {
+            Application.Quit();
         }
     }
 
