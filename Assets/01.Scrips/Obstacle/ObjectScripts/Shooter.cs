@@ -1,6 +1,7 @@
 namespace Obstacles.Shooter
 {
     using Combat;
+    using Managers;
     //System
     using System.Collections;
 
@@ -75,6 +76,8 @@ namespace Obstacles.Shooter
         public void Destroy()
         {
             gameObject.SetActive(false);
+            GameManager.Instance.AddStone(5);
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

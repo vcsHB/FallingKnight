@@ -1,9 +1,9 @@
 namespace Obstacles.FlyObstacle
 {
     using Combat;
+    using Managers;
     //Project
     using UnityEngine;
-    using static UnityEditor.PlayerSettings;
 
     public class FlyObstacle : Obstacle, IDestroyable
     {
@@ -60,6 +60,8 @@ namespace Obstacles.FlyObstacle
         public void Destroy()
         {
             gameObject.SetActive(false);
+            GameManager.Instance.AddStone(5);
+
         }
 
         private void OnDrawGizmos()

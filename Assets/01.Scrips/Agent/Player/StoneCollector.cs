@@ -26,6 +26,13 @@ namespace Agents.Players
             _player.OnStoneCollectEvent?.Invoke();
         }
 
+        public void Collect(int amount)
+        {
+            _collectAmount += amount;
+            RefreshStoneAmountText();
+            _player.OnStoneCollectEvent?.Invoke();
+        }
+
 
         private void RefreshStoneAmountText()
         {
