@@ -50,6 +50,8 @@ namespace Map.MapManager
             }
 
             ChangeStage();
+
+            followCam.Target.TrackingTarget.position = new Vector2(followCam.Target.TrackingTarget.position.x, followCam.Target.TrackingTarget.position.y - followCam.Lens.OrthographicSize * 1.5f);
         }
 
         void ChangeStage()
@@ -89,7 +91,7 @@ namespace Map.MapManager
             GameObject startMapTile = poolingQueueList[mapKind].Dequeue();
             startMapTile.transform.position = new Vector2(0f, cameraBottomPosY - 10.0f);
             // nextMapTile 활성화
-            startMapTile.SetActive(true);
+            startMapTile.GetComponent<MapTile>().SetActiveTile(true);
             poolingQueueList[mapKind].Enqueue(startMapTile);
 
             nextMapTileNumber++;
@@ -107,7 +109,8 @@ namespace Map.MapManager
                         // nextMapTile을 전에 생성된 타일에 딱 붙게 위치 변경
                         nextMapTile.transform.position = new Vector2(0, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y);
                         // nextMapTile 활성화
-                        nextMapTile.SetActive(true);
+                        nextMapTile.GetComponent<MapTile>().SetActiveTile(true);
+                        //nextMapTile.SetActive(true);
                         // lastMapTile을 nextMapTile.transform으로 변경해서 다음에 생성될 맵타일 올바른 위치에 생성될 수 있도록 함.
                         lastMapTile = nextMapTile.transform;
                     }
@@ -119,6 +122,7 @@ namespace Map.MapManager
                                                                 Quaternion.identity);
 
                         prefab.GetComponent<MapTile>().followCam = followCam;
+                        prefab.GetComponent<MapTile>().SetActiveTile(true);
 
                         // lastMapTile을 prefab.transform으로 변경해서 다음에 생성될 맵타일 올바른 위치에 생성될 수 있도록 함.
                         lastMapTile = prefab.transform;
