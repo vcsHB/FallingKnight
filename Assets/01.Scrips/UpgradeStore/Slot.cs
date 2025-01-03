@@ -29,6 +29,8 @@ namespace UpgradeStore.Slots
 
         private void Update()
         {
+            LoadValue();
+            
             upgradeLevelSlider.fillAmount = upgradeLevel / upgradeLimit;
 
             if(upgradeLevel == upgradeLimit)
@@ -37,7 +39,17 @@ namespace UpgradeStore.Slots
             }
             else
             {
+                
                 upgradeCostText.text = upgradeCost.ToString();
+            }
+        }
+
+        private void LoadValue()
+        {
+            if (PlayerPrefs.HasKey("UpgradeLevel"))
+            {
+                upgradeLevel = PlayerPrefs.GetFloat("UpgradeLevel");
+                upgradeCost = PlayerPrefs.GetFloat("UpgradeCost");
             }
         }
 
@@ -50,9 +62,11 @@ namespace UpgradeStore.Slots
             }
 
             upgradeCost += upgradeCostAmountOfIncrease;
+            PlayerPrefs.SetFloat("UpgradeCost", upgradeCost);
 
             //딕셔너리 참조해서 값 변경하기
             upgradeLevel ++;
+            PlayerPrefs.SetFloat("UpgradeLevel", upgradeLevel);
         }
     }
 }
