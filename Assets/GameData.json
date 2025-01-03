@@ -1,8 +1,8 @@
 {
-    "money": 0,
+    "money": 70,
     "bestSocre": 0,
-    "healthLevel": 0,
-    "attackDamageLevel": 0,
+    "healthLevel": 3,
+    "attackDamageLevel": 1,
     "moveSpeedLevel": 0,
     "defenseLevel": 0,
     "attackSpeedLevel": 0
