@@ -3,7 +3,7 @@ namespace Obstacles.Bigbook
     //UnityEngine
     using UnityEngine;
 
-    public class BigBook : MonoBehaviour
+    public class BigBook : Obstacle
     {
         [Header("BigBookInfo")]
         [SerializeField] private float oppenBookDistance    = default;

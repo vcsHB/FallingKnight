@@ -6,6 +6,6 @@ namespace Map.MapData.ScriptableObject
     [CreateAssetMenu(fileName = "MapDataScriptableObjectScript", menuName = "Scriptable Objects/MapDataScriptableObjectScript")]
     public class MapDataScriptableObjectScript : ScriptableObject
     {
-        public MapData[] mapDataList;
+        public MapData[] mapDataArray;
     }
 }

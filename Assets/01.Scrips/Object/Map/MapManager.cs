@@ -6,6 +6,7 @@ namespace Map.MapManager
     using System.Collections.Generic;
     using System.Collections;
     using Unity.Cinemachine;
+    using Obstacles;
 
     public class MapManager : MonoBehaviour
     {
@@ -26,7 +27,8 @@ namespace Map.MapManager
         /// <summary>
         /// 맵타일 큐를 담은 리스트
         /// </summary>
-        private List<Queue<GameObject>> poolingQueueList =new List<Queue<GameObject>>();
+        private List<Queue<GameObject>> poolingQueueList = new List<Queue<GameObject>>();
+        private List<List<GameObject>>  poolingObstacleList = new List<List<GameObject>>();
 
         void Awake()
         {
@@ -42,9 +44,10 @@ namespace Map.MapManager
 
         private void Start()
         {
-            for (int i = 0; i < mapDatas.mapDataList.Length; i++)
+            for (int i = 0; i < mapDatas.mapDataArray.Length; i++)
             {
                 poolingQueueList.Add(new Queue<GameObject>());
+                poolingObstacleList.Add(new List<GameObject>());
             }
 
             ChangeStage();
@@ -55,7 +58,7 @@ namespace Map.MapManager
             // 임시로 그냥 랜덤으로 작업, 후에 가중치를 두는 등의 변경이 있을 수 있음.
             int currentMapId = 1;/*Random.Range(0, mapDatas.mapDataList.Length);*/
             
-            currentMapData = mapDatas.mapDataList[currentMapId];
+            currentMapData = mapDatas.mapDataArray[currentMapId];
 
             SpawnMapPrefab();
         }
@@ -95,6 +98,18 @@ namespace Map.MapManager
             if (nextMapTileNumber >= currentMapData.mapTileArray.Length) nextMapTileNumber = 0;
             #endregion
 
+            #region 풀링을 위한 장애물 생성
+            if (poolingObstacleList[mapKind].Count == 0)
+            {
+                for(int i = 0; i < currentMapData.ObstacleArray.Length; i++)
+                {
+                    GameObject obstacle = Instantiate(currentMapData.ObstacleArray[i], new Vector2(0, cameraBottomPosY - offset), Quaternion.identity);
+                    poolingObstacleList[mapKind].Add(obstacle);
+                    obstacle.SetActive(false);
+                }
+            }
+            #endregion
+
             Transform lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
             isScroll = true;
             while (isScroll)
@@ -127,6 +142,13 @@ namespace Map.MapManager
 
                     poolingQueueList[mapKind].Enqueue(nextMapTile); // nextMapTile을 poolingQueueList[mapKind]에 Enqueue하면서 풀링이 되도록 함.
 
+                    if(nextMapTileNumber != 0 && poolingObstacleList[mapKind].Count % nextMapTileNumber == 0)
+                    {
+                        GameObject obstacle = poolingObstacleList[mapKind][Random.Range(0, poolingObstacleList[mapKind].Count)];
+                        obstacle.transform.position = new Vector2(obstacle.GetComponent<Obstacle>().GetSpawnPosX(), cameraBottomPosY - offset);
+                        obstacle.SetActive(true);
+                    }
+
                     nextMapTileNumber++; // 새 맵타일을 생성할 경우를 위해서 다음에 올 맵타일이 몇 번째 맵타일인지 계산함.
                     if (nextMapTileNumber >= currentMapData.mapTileArray.Length) nextMapTileNumber = 0;
                 }
@@ -138,6 +160,11 @@ namespace Map.MapManager
             {
                 poolingQueueList[mapKind].Enqueue(poolingQueueList[mapKind].Dequeue());
                 nextMapTileNumber++;
+            }
+
+            for (int i = 0; i < poolingObstacleList[mapKind].Count; i++)
+            {
+                poolingObstacleList[mapKind][i].SetActive(false); // 스테이지가 끝나면 모든 장애물 비활성화
             }
         }
     }
