@@ -34,5 +34,5 @@ MonoBehaviour:
     baseValue: 6
     modifier: []
   jumpPower:
-    baseValue: 8
+    baseValue: 7
     modifier: []

@@ -1,6 +1,7 @@
 namespace Obstacles.HorizontalLadder
 {
     using Combat;
+    using Managers;
     using UnityEngine;
 
     public class HorizontalLadder : Obstacle, IDestroyable
@@ -8,6 +9,7 @@ namespace Obstacles.HorizontalLadder
         public void Destroy()
         {
             gameObject.SetActive(false);
+            GameManager.Instance.AddStone(5);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

@@ -9,6 +9,7 @@ namespace Agents.Players
     {
         [SerializeField] private int _collectAmount = 0;
         [SerializeField] private TextMeshProUGUI _stoneCollectText;
+        public int CollectedAmount => _collectAmount;
 
 
         private Player _player;
@@ -21,6 +22,13 @@ namespace Agents.Players
         public void Collect(ItemObject collectObject)
         {
             _collectAmount++;
+            RefreshStoneAmountText();
+            _player.OnStoneCollectEvent?.Invoke();
+        }
+
+        public void Collect(int amount)
+        {
+            _collectAmount += amount;
             RefreshStoneAmountText();
             _player.OnStoneCollectEvent?.Invoke();
         }

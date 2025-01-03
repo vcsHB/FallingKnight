@@ -9,6 +9,7 @@ namespace InputSystem
     {
         public event Action OnEscEvent;
         private Controls _controls;
+        public bool canControl = true;
 
         private void OnEnable()
         {
@@ -27,6 +28,7 @@ namespace InputSystem
 
         public void OnEsc(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             if(context.performed)
                 OnEscEvent?.Invoke();
         }

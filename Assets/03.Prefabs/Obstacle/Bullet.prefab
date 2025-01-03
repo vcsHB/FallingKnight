@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 585618525493540909}
   - component: {fileID: 2601759861528085098}
   - component: {fileID: 710008601765138631}
-  - component: {fileID: -8517774621629345014}
   - component: {fileID: 7293239705633123624}
+  - component: {fileID: -8517774621629345014}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -275861191
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1618222136353808480, guid: 5b34967bba88e25489fc36ddea556f55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,19 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 10
   destroyTime: 3
---- !u!114 &-8517774621629345014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622245820929754720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6803eeb6a6409d409d1eefc55850cdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 0
+  _caster: {fileID: 7293239705633123624}
 --- !u!114 &7293239705633123624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +129,16 @@ MonoBehaviour:
     m_Bits: 64
   _targetMaxAmount: 0
   _detectRadius: 0.13
+--- !u!114 &-8517774621629345014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622245820929754720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6803eeb6a6409d409d1eefc55850cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 4

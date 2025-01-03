@@ -1,5 +1,6 @@
 namespace Managers.Jsonmanager
 {
+    using System;
     //System
     using System.IO;
 
@@ -8,7 +9,9 @@ namespace Managers.Jsonmanager
 
     public class JsonManager : MonoBehaviour
     {
+        public event Action<int> OnMoneyChangedEvent;
         public static JsonManager instance;
+
 
         [Header("DataManagerInfo")]
         [SerializeField] private string filename = "GameData.json";
@@ -62,6 +65,21 @@ namespace Managers.Jsonmanager
             gameData = resetGameData;
             Save();
         }
+
+        public void AddMoney(int amount)
+        {
+            gameData.money += amount;
+            OnMoneyChangedEvent?.Invoke(gameData.money);
+        }
+
+
+        public void UseMoney(int amount)
+        {
+            gameData.money -= amount;
+            OnMoneyChangedEvent?.Invoke(gameData.money);
+        }
+
+
     }
 
     [System.Serializable]

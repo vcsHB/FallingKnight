@@ -1,4 +1,5 @@
 using Combat;
+using Managers;
 using UnityEngine;
 namespace Obstacles.Laserbook
 {
@@ -89,6 +90,8 @@ namespace Obstacles.Laserbook
         public void Destroy()
         {
             gameObject.SetActive(false);
+            GameManager.Instance.AddStone(5);
+            
         }
 
         private void SetActiveVFXs(bool value)
