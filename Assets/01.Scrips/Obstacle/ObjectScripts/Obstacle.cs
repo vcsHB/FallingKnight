@@ -5,16 +5,17 @@ namespace Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        [SerializeField] Vector3 pos;
+        [SerializeField] private Vector3 pos;
 
         private void Awake()
         {
-            pos = transform.position;
+            pos = transform.localPosition;
         }
 
-        private void OnEnable()
+        public virtual void ResetObstacle()
         {
-            transform.position = pos;
+            transform.localPosition = pos;
+            gameObject.SetActive(true);
         }
     }
 }
