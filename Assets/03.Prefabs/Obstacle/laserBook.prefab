@@ -5031,7 +5031,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -5071,8 +5071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87ebe23c91edbc4eacf65ea51a983e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPosXList:
-  - -7.5
+  pos: {x: 0, y: 0, z: 0}
+  damage: 0
   laserDirection: {x: 1, y: 0}
   checkLayer:
     serializedVersion: 2
