@@ -7,7 +7,7 @@ namespace Obstacles.Laserbook
     //Project
     using UnityEngine;
 
-    public class LaserBook : MonoBehaviour, IDestroyable
+    public class LaserBook : Obstacle, IDestroyable
     {
         [Header("LaserBookInfo")]
         [SerializeField] private Vector2 laserDirection = Vector2.zero;
@@ -105,6 +105,11 @@ namespace Obstacles.Laserbook
                 _fireVFX.Stop();
                 _hitVFX.Stop();
             }
+        }
+
+        public override float GetSpawnPosX()
+        {
+            return base.GetSpawnPosX();
         }
     }
 }

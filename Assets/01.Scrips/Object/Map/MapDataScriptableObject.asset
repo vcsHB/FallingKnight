@@ -15,18 +15,14 @@ MonoBehaviour:
   mapDataArray:
   - mapKind: 0
     mapTileArray:
-    - {fileID: 7813177105371024504, guid: b0118c09b2716ec4ab9ccd0417096b2d, type: 3}
-    - {fileID: 8849766063250644413, guid: 7bc56aad6b955fb41b1f82f0ff91db1a, type: 3}
-    - {fileID: 3999237886463502034, guid: 5de331efad9d80a459c9b8c97878ba9c, type: 3}
-    - {fileID: 2610748498532325645, guid: 4d94e749c334cfa4fad207e4bd25a3a6, type: 3}
+    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
     ObstacleArray:
     - {fileID: 7019205521040874779, guid: eb51004357f502e409b9cd2244829ca8, type: 3}
   - mapKind: 1
     mapTileArray:
-    - {fileID: 9100382630410204799, guid: 3181fd3e205488f4da998e37a3b077e6, type: 3}
-    - {fileID: 7216382225757809336, guid: ff0015aabcae25541b07cbdc0fd66c18, type: 3}
-    - {fileID: 3220944387842500339, guid: cd97c4edd64ddc14fa64f3ff42a66a21, type: 3}
-    - {fileID: 2669845029255615016, guid: 73192cf31cf9d9d4fb1a8f612fd9184f, type: 3}
+    - {fileID: 3235783741331721394, guid: bc8688e0366486b40a588e0e2ee2e263, type: 3}
+    - {fileID: 3235783741331721394, guid: 77b326dd9b920804980c876d44e239d7, type: 3}
+    - {fileID: 6574056650101920648, guid: 0514fbac940b55245aef29543bfc1694, type: 3}
     ObstacleArray:
     - {fileID: 8143858742272669444, guid: fd8f69a9f1fb3664b82c86f4a46141ea, type: 3}
     - {fileID: 7309259754638404631, guid: 32c3e0330a6ede141a9327e73716b13b, type: 3}

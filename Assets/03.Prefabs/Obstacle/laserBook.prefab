@@ -5071,6 +5071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87ebe23c91edbc4eacf65ea51a983e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPosXList:
+  - -7.5
   laserDirection: {x: 1, y: 0}
   checkLayer:
     serializedVersion: 2

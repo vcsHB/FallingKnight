@@ -7,6 +7,7 @@ namespace Map.MapManager
     using System.Collections;
     using Unity.Cinemachine;
     using Obstacles;
+    using UIManage.InGame;
 
     public class MapManager : MonoBehaviour
     {
@@ -18,9 +19,10 @@ namespace Map.MapManager
         [Header("카메라")]
         [SerializeField] private CinemachineCamera followCam;
 
-        [Header("기타")]
+        [Header("StageChangePanel")]
+        [SerializeField] private StageChangePanel stageChangePanel;
+
         [SerializeField] private const float offset = 1.0f;
-        public float        fallingSpeed = 5.0f;
         public const int    totalMapTileNumber = 20;
         public MapData      currentMapData;
 
@@ -63,6 +65,8 @@ namespace Map.MapManager
             } while (currentMapData == mapDatas.mapDataArray[currentMapId]);
             
             currentMapData = mapDatas.mapDataArray[currentMapId];
+
+            stageChangePanel.Open();
 
             StartCoroutine(CoSpawnMap());
         }
@@ -139,7 +143,7 @@ namespace Map.MapManager
 
                     poolingQueueList[mapKind].Enqueue(nextMapTile); // nextMapTile을 poolingQueueList[mapKind]에 Enqueue하면서 풀링이 되도록 함.
 
-                    if(nextMapTileNumber != 0 && nextMapTileNumber % poolingObstacleList[mapKind].Count == 0)
+                    if(nextMapTileNumber != 0 && nextMapTileNumber % 2 == 0) // 두 번에 한 번씩 Obstacle이 출현
                     {
                         GameObject obstacle = poolingObstacleList[mapKind][Random.Range(0, poolingObstacleList[mapKind].Count)];
                         obstacle.transform.position = new Vector2(obstacle.GetComponent<Obstacle>().GetSpawnPosX(), cameraBottomPosY - offset);
