@@ -10,6 +10,7 @@ namespace Agents.Players
         [SerializeField] private float _gravityScale = 1f;
         [SerializeField] private LayerMask _wallLayer;
         [SerializeField] private float _wallDetectRange;
+        [SerializeField] private float _limitVerticalVelocity = 40f;
         private Rigidbody2D _rigidCompo;
         public bool IsGravity => _rigidCompo.gravityScale != 0f;
         public float YVelocity => _rigidCompo.linearVelocityY;
@@ -53,17 +54,7 @@ namespace Agents.Players
             {
                 _rigidCompo.linearVelocityX = _movementX * _moveSpeedStat.GetValue() * _moveSpeedMultiplier;
             }
-            // if (_isFalling)
-            // {
-            //     _movementY += _gravityScale * Time.fixedDeltaTime;
-            //     _rigidCompo.linearVelocityY = _movementY * _gravityScale;
-            // }
-            // else
-            // {
-            //     _movementY -= _reducePower * Time.fixedDeltaTime;
-            // }
-
-            //OnMovement?.Invoke(_rigidCompo.linearVelocity);
+            _rigidCompo.linearVelocityY = Mathf.Clamp(_rigidCompo.linearVelocityY, -_limitVerticalVelocity, _limitVerticalVelocity);
         }
 
         public void SetMovement(float xMovement)

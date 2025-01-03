@@ -32,7 +32,7 @@ namespace Agents.Players.FSM
         {
             base.AnimationEndTrigger();
             _mover.SetGravity(true);
-            _stateMachine.ChangeState("Fall");
+            _stateMachine.ChangeState("AirRolling");
 
         }
 

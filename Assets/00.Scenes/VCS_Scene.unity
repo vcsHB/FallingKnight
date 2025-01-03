@@ -23713,8 +23713,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7439349730430431155, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: _reducePower
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439349730430431155, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: _gravityScale
-      value: 0.5
+      value: 2.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
