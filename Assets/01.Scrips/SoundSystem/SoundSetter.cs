@@ -26,23 +26,28 @@ namespace SoundManage
         {
 
             _data = DBManager.FromJson<SoundData>("SoundData");
-            if(_data == null) 
+            if (_data == null)
             {
                 _data = new SoundData();
-                
             }
-            _bgmSlider.value = _data.bgmVolume;
-            HandleChangedBGMSliderValue(_data.bgmVolume);
-            _sfxSlider.value = _data.sfxVolume;
-            HandleChangedSFXSliderValue(_data.sfxVolume);
+        }
 
+        private void Start()
+        {
+            _bgmSlider.onValueChanged.AddListener(HandleChangedBGMSliderValue);
+            _sfxSlider.onValueChanged.AddListener(HandleChangedSFXSliderValue);
+
+            _bgmSlider.value = _data.bgmVolume;
+            _audioMixer.SetFloat("Volume_BGM", _data.bgmVolume);
+            _sfxSlider.value = _data.sfxVolume;
+            _audioMixer.SetFloat("Volume_SFX", _data.sfxVolume);
         }
 
 
         private void HandleChangedBGMSliderValue(float value)
         {
             _data.bgmVolume = value;
-            if (value < -40f)
+            if (value <= -40f)
                 value = -80f;
             _audioMixer.SetFloat("Volume_BGM", value);
         }
@@ -50,7 +55,7 @@ namespace SoundManage
         private void HandleChangedSFXSliderValue(float value)
         {
             _data.sfxVolume = value;
-            if (value < -40f)
+            if (value <= -40f)
                 value = -80f;
             _audioMixer.SetFloat("Volume_SFX", value);
         }
