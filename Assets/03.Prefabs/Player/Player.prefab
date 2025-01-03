@@ -219,7 +219,19 @@ MonoBehaviour:
       m_Calls: []
   OnHealthDecreaseEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 297822701195352693}
+        m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
+        m_MethodName: CreateFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &539095712922840211
 GameObject:
   m_ObjectHideFlags: 0
@@ -25064,6 +25076,66 @@ MonoBehaviour:
   _impactTrm: {fileID: 4909557256789594395}
   _duration: 0.2
   _max: 0.55
+--- !u!1 &3811090543324265823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748103874746622430}
+  - component: {fileID: 297822701195352693}
+  - component: {fileID: 3623715391179133236}
+  m_Layer: 6
+  m_Name: HitFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748103874746622430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811090543324265823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8282408239916569003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297822701195352693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811090543324265823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e010ab53abc384b8472bdcff60e154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3623715391179133236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811090543324265823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e7b2fea5212d3409369bcfaa2309dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 938015839143916584}
+  _blinkMaterial: {fileID: 2100000, guid: b6fba0d911e9a04488335571c345406f, type: 2}
+  _blinkTime: 0.1
 --- !u!1 &4431388073742426782
 GameObject:
   m_ObjectHideFlags: 0
@@ -25186,6 +25258,7 @@ Transform:
   - {fileID: 5371897262958525028}
   - {fileID: 4337246904510226788}
   - {fileID: 875242765148061670}
+  - {fileID: 748103874746622430}
   m_Father: {fileID: 6740554933104029537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5088993619644519340
@@ -35300,6 +35373,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1929562884668419052}
         m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
         m_MethodName: CreateFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1703807156695047727}
+        m_TargetAssemblyTypeName: Agents.Players.PlayerHeatController, Assembly-CSharp
+        m_MethodName: ResetHeat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

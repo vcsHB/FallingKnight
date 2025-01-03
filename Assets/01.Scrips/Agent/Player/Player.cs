@@ -11,16 +11,17 @@ namespace Agents.Players
     public class Player : Agent
     {
         [Header("Animation Params")]
-        [field:SerializeField] public AnimParamSO FallParam;
-        [field:SerializeField] public AnimParamSO HoldWallParam;
-        [field:SerializeField] public AnimParamSO AirRollingParam;
-        [field:SerializeField] public AnimParamSO AttackParam;
-        [field:SerializeField] public AnimParamSO DropAttackParam;
+        [field: SerializeField] public AnimParamSO FallParam;
+        [field: SerializeField] public AnimParamSO HoldWallParam;
+        [field: SerializeField] public AnimParamSO AirRollingParam;
+        [field: SerializeField] public AnimParamSO AttackParam;
+        [field: SerializeField] public AnimParamSO DropAttackParam;
         [Header("Essentials")]
 
         [field: SerializeField] public PlayerInput PlayerInput { get; private set; }
 
         public PlayerStatusSO PlayerStatus { get; private set; }
+        public Health HealthCompo { get; private set; }
 
         public PlayerStateMachine StateMachine;
 
@@ -30,12 +31,14 @@ namespace Agents.Players
         public UnityEvent OnReleaseWallEvent;
         public UnityEvent OnAttackEvent;
         public UnityEvent OnDropAttackEvent;
-        
+
 
         protected override void Awake()
         {
             base.Awake();
+            HealthCompo = GetComponent<Health>();
             PlayerStatus = Status as PlayerStatusSO;
+            HealthCompo.Initialize(Status.health.GetValue());
             StateMachine = new PlayerStateMachine(this);
             StateMachine.Initialize("Fall");
         }

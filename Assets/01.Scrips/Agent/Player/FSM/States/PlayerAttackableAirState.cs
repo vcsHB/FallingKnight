@@ -5,9 +5,10 @@ namespace Agents.Players.FSM
 
     public class PlayerAttackableAirState : PlayerAirState
     {
-        
+        private PlayerHeatController _heatController;
         public PlayerAttackableAirState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
+            _heatController = player.GetCompo<PlayerHeatController>();
         }
 
         public override void Enter()
@@ -33,7 +34,8 @@ namespace Agents.Players.FSM
         private void HandleDropAttackEvent()
         {
             // 발열 레벨 체크 필요
-            _stateMachine.ChangeState("DropAttack");
+            if(_heatController.CanDropAttack)
+                _stateMachine.ChangeState("DropAttack");
         }
     }
 }

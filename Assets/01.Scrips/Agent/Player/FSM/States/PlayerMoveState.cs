@@ -15,7 +15,6 @@ namespace Agents.Players.FSM
         }
         public override void UpdateState()
         {
-            Debug.Log("Move Update");
             base.UpdateState();
             float xInput = _player.PlayerInput.InputDirection.x;
             _mover.SetMovement(xInput);
