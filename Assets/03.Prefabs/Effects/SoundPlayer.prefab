@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <type>k__BackingField: 0
-  _sfxGroup: {fileID: 0}
-  _musicGroup: {fileID: 0}
+  _sfxGroup: {fileID: -7059502404447194237, guid: 41d55fe6cf2be79479160336587a0dc4, type: 2}
+  _musicGroup: {fileID: 774793451075700399, guid: 41d55fe6cf2be79479160336587a0dc4, type: 2}
 --- !u!82 &1337080331691193231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

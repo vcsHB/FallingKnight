@@ -138,6 +138,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHoldingWallEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 491983713994295881}
+        m_TargetAssemblyTypeName: FeedbackSystem.FeedbackPlayer, Assembly-CSharp
+        m_MethodName: CreateFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnReleaseWallEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5249,7 +5264,7 @@ Transform:
   m_GameObject: {fileID: 1013348452153844743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.811, y: -1.409, z: 0}
+  m_LocalPosition: {x: 0.811, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10154,7 +10169,7 @@ Transform:
   m_GameObject: {fileID: 1995071782506692589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.221, y: -1.676, z: 0}
+  m_LocalPosition: {x: 0.221, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10183,7 +10198,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2432
   _targetMaxAmount: 3
-  _boxSize: {x: 3, y: 2.65}
+  _boxSize: {x: 3, y: 3.14}
 --- !u!114 &7631251535361777188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25079,6 +25094,64 @@ MonoBehaviour:
   _impactTrm: {fileID: 4909557256789594395}
   _duration: 0.2
   _max: 0.55
+--- !u!1 &3746879663680558283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2378373102424465539}
+  - component: {fileID: 491983713994295881}
+  - component: {fileID: 7469346174498670603}
+  m_Layer: 6
+  m_Name: HoldingWallFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2378373102424465539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746879663680558283}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8282408239916569003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491983713994295881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746879663680558283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e010ab53abc384b8472bdcff60e154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7469346174498670603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746879663680558283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5145f7a3ee4aefc4787274767788ce9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundSO: {fileID: 11400000, guid: 70542bb4ea35e87428366aeb044272f8, type: 2}
 --- !u!1 &3811090543324265823
 GameObject:
   m_ObjectHideFlags: 0
@@ -25272,6 +25345,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2378373102424465539}
   - {fileID: 4149222538537403130}
   - {fileID: 5371897262958525028}
   - {fileID: 4337246904510226788}

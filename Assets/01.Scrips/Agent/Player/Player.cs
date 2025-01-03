@@ -28,9 +28,11 @@ namespace Agents.Players
         [Header("Events")]
 
         public UnityEvent OnHoldWallEvent;
+        public UnityEvent OnHoldingWallEvent;
         public UnityEvent OnReleaseWallEvent;
         public UnityEvent OnAttackEvent;
         public UnityEvent OnDropAttackEvent;
+        public UnityEvent OnStoneCollectEvent;
 
 
         protected override void Awake()
