@@ -16,6 +16,8 @@ MonoBehaviour:
   - mapKind: 0
     mapTileArray:
     - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
+    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
+    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
     ObstacleArray:
     - {fileID: 7019205521040874779, guid: eb51004357f502e409b9cd2244829ca8, type: 3}
   - mapKind: 1
