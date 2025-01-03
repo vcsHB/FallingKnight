@@ -28,7 +28,6 @@ namespace Agents.Players.FSM
 
         public override void UpdateState()
         {
-            Debug.Log("AirRolling Update");
             _currentRollingTime += Time.deltaTime;
             if (_currentRollingTime > _duration)
             {

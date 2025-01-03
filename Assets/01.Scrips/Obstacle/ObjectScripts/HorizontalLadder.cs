@@ -1,9 +1,17 @@
-using UnityEngine;
-
-public class HorizontalLadder : MonoBehaviour, IDestroyable
+namespace Obstacles.HorizontalLadder
 {
-    public void Destroy()
+    using UnityEngine;
+
+    public class HorizontalLadder : Obstacle, IDestroyable
     {
-        gameObject.SetActive(false);
+        public void Destroy()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public override float GetSpawnPosX()
+        {
+            return SpawnPosXList[0];
+        }
     }
 }

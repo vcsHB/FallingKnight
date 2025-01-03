@@ -3,7 +3,7 @@ namespace Obstacles.Bigbook
     //UnityEngine
     using UnityEngine;
 
-    public class BigBook : MonoBehaviour
+    public class BigBook : Obstacle
     {
         [Header("BigBookInfo")]
         [SerializeField] private float oppenBookDistance    = default;
@@ -48,6 +48,11 @@ namespace Obstacles.Bigbook
             Gizmos.color = Color.green;
             
             Gizmos.DrawWireSphere(transform.position, checkRadius);
+        }
+
+        public override float GetSpawnPosX()
+        {
+            return base.GetSpawnPosX();
         }
     }
 }

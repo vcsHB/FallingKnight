@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Agents.Animate;
 using ObjectManage;
 using StatSystem;
@@ -32,7 +31,6 @@ namespace Agents.Players.FSM
 
         public override void UpdateState()
         {
-            Debug.Log("HoldWall");
             base.UpdateState();
             Vector2 wallPoint = _mover.DetectWall();
             if (wallPoint.magnitude < 0.01f)
