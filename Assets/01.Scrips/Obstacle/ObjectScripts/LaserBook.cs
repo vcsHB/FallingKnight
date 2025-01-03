@@ -12,14 +12,18 @@ namespace Obstacles.Laserbook
         [Header("LaserBookInfo")]
         [SerializeField] private Vector2 laserDirection = Vector2.zero;
         [SerializeField] private LayerMask checkLayer = default;
+        [SerializeField] private LineRenderer _laserRenderer;
+        [SerializeField] private ParticleSystem _fireVFX;
+        [SerializeField] private ParticleSystem _hitVFX;
 
-        [SerializeField] private float laserYPos                = default;
-        [SerializeField] private float laserDistance            = default;
+        [SerializeField] private float laserYPos = default;
+        [SerializeField] private float laserDistance = default;
+        [SerializeField] private Vector2 _laserWidth;
 
-        //·¹ÀÌÀú ÄðÅ¸ÀÓ
-        [SerializeField] private float laserCoolTime            = default;
-        //·¹ÀÌÀú À¯Áö½Ã°£
-        [SerializeField] private float laserMaintenanceTime     = default;  
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
+        [SerializeField] private float laserCoolTime = default;
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½
+        [SerializeField] private float laserMaintenanceTime = default;
 
         private Animator anim = null;
         private float coolTimeTimer = default;
@@ -35,50 +39,72 @@ namespace Obstacles.Laserbook
         {
             coolTimeTimer += Time.deltaTime;
 
-            if(coolTimeTimer >= laserCoolTime)
+            if (coolTimeTimer >= laserCoolTime)
             {
                 anim.SetBool("Attack", true);
-                Debug.Log("¹ß»ç");
+                Debug.Log("ï¿½ß»ï¿½");
             }
 
             if (coolTimeTimer >= laserCoolTime + laserMaintenanceTime + anim.GetCurrentAnimatorStateInfo(0).length)
             {
-                Debug.Log("¸ØÃç");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½");
                 anim.SetBool("Attack", false);
                 isShot = false;
 
+                SetActiveVFXs(false);
                 coolTimeTimer = 0;
             }
 
             if (isShot)
             {
                 ShotLaser();
+
             }
         }
 
-        //·¹ÀÌÀú ¹ß»ç
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½
         private void ShotLaser()
         {
-            RaycastHit2D lowerHit = Physics2D.Raycast(transform.position + (Vector3.up * laserYPos), laserDirection, laserDistance, checkLayer);
-            RaycastHit2D upperHit = Physics2D.Raycast(transform.position + (Vector3.up * -laserYPos), laserDirection, laserDistance, checkLayer);
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position + (Vector3.up * laserYPos), _laserWidth, 0, laserDirection, laserDistance, checkLayer);
 
             Debug.DrawRay(transform.position + (Vector3.up * laserYPos), laserDirection * laserDistance, Color.red);
-            Debug.DrawRay(transform.position + (Vector3.up * -laserYPos), laserDirection * laserDistance, Color.red);
 
-            if(lowerHit.collider != null || upperHit.collider != null)
+            if (hit.collider != null)
             {
-                //ÇÃ·¹ÀÌ¾î ÇÇÇØ Ã³¸®
+                //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+                Vector2 hitPos = hit.point;
+                float _minLen = Mathf.Abs(transform.position.x - hitPos.x);
+                Vector2 hitPosition = new Vector3(_minLen, 0, 0);
+                _laserRenderer.SetPosition(1, hitPosition);
+                _hitVFX.transform.localPosition = hitPosition;
             }
         }
 
         public void ShootTrigger()
         {
             isShot = true;
+            SetActiveVFXs(true);
+
         }
 
         public void Destroy()
         {
             gameObject.SetActive(false);
+        }
+
+        private void SetActiveVFXs(bool value)
+        {
+            _laserRenderer.enabled = value;
+            if (value)
+            {
+                _fireVFX.Play();
+                _hitVFX.Play();
+            }
+            else
+            {
+                _fireVFX.Stop();
+                _hitVFX.Stop();
+            }
         }
     }
 }
