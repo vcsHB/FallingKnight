@@ -32,17 +32,17 @@ namespace Managers.Jsonmanager
             DontDestroyOnLoad(this.gameObject);
             #endregion
 
-            path = Path.Combine(Application.persistentDataPath, filename);
+            path = Path.Combine(Application.dataPath, filename);
         }
 
-        // µ¥ÀÌÅÍ ÀúÀå
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         public void Save()
         {
             string data = JsonUtility.ToJson(gameData, true);
             File.WriteAllText(path, data);
         }
 
-        // µ¥ÀÌÅÍ ºÒ·¯¿À±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
         public void Load()
         {
             if (File.Exists(path))
@@ -56,7 +56,7 @@ namespace Managers.Jsonmanager
             }
         }
 
-        // µ¥ÀÌÅÍ ¸®¼Â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         public void ResetData()
         {
             gameData = resetGameData;
