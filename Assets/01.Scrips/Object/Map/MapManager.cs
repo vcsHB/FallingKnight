@@ -80,6 +80,8 @@ namespace Map.MapManager
                 {
                     GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(0f, cameraBottomPosY - 10.0f), Quaternion.identity);
                     poolingQueueList[mapKind].Enqueue(newMapTile);
+
+                    newMapTile.GetComponent<MapTileNonactivation>().followCam = followCam;
                     newMapTile.SetActive(false);
                 }
             }
@@ -116,6 +118,9 @@ namespace Map.MapManager
                         GameObject prefab = Instantiate(currentMapData.mapTileArray[nextMapTileNumber],
                                                                 new Vector2(0f, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y), 
                                                                 Quaternion.identity);
+
+                        prefab.GetComponent<MapTileNonactivation>().followCam = followCam;
+
                         // lastMapTile을 prefab.transform으로 변경해서 다음에 생성될 맵타일 올바른 위치에 생성될 수 있도록 함.
                         lastMapTile = prefab.transform;
                     }
