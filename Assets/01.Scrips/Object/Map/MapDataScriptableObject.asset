@@ -15,7 +15,6 @@ MonoBehaviour:
   mapDataArray:
   - mapKind: 0
     mapTileArray:
-    - {fileID: 4440830626203757850, guid: fa895be473e301e468c404e9ec314e9c, type: 3}
     - {fileID: 4440830626203757850, guid: b5e05d4e889986e4db84e245ccc20daa, type: 3}
     - {fileID: 4440830626203757850, guid: 785192468fb9d414bb086ce71a879a0f, type: 3}
     - {fileID: 4440830626203757850, guid: 605035da2659ebb4ab8b648ef8e49d52, type: 3}
@@ -23,7 +22,6 @@ MonoBehaviour:
     - {fileID: 4440830626203757850, guid: 403ddd0bef4ff3c4196f6c14d4df8b3b, type: 3}
   - mapKind: 1
     mapTileArray:
-    - {fileID: 4440830626203757850, guid: ef35887264303e44dab9987c83df1969, type: 3}
     - {fileID: 4440830626203757850, guid: 32ee8efb41607004888bb6b442403ceb, type: 3}
     - {fileID: 4440830626203757850, guid: 4f37a1eadb83e8441beeb2d893f3dbbb, type: 3}
     - {fileID: 4440830626203757850, guid: cd68b868f059d6b448915a0a9bfca021, type: 3}
@@ -36,4 +34,3 @@ MonoBehaviour:
     - {fileID: 6898053860815781549, guid: 09b2020b7cbd1fa43afdd85b24d2a4d1, type: 3}
     - {fileID: 6898053860815781549, guid: 602ac7ded8aff944dbf2fc4e2c946df9, type: 3}
     - {fileID: 6898053860815781549, guid: 385bc6e76e8663e439f881fc913fd4e8, type: 3}
-    - {fileID: 6898053860815781549, guid: 2dba47094fff70a41adfd0d61d2201f8, type: 3}
