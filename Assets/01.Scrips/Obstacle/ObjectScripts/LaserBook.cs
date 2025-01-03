@@ -1,11 +1,8 @@
+using Combat;
+using UnityEngine;
 namespace Obstacles.Laserbook
 {
-    using NUnit.Framework.Constraints;
-    //System
-    using System.Collections;
-
     //Project
-    using UnityEngine;
 
     public class LaserBook : Obstacle, IDestroyable
     {
@@ -42,12 +39,10 @@ namespace Obstacles.Laserbook
             if (coolTimeTimer >= laserCoolTime)
             {
                 anim.SetBool("Attack", true);
-                Debug.Log("�߻�");
             }
 
             if (coolTimeTimer >= laserCoolTime + laserMaintenanceTime + anim.GetCurrentAnimatorStateInfo(0).length)
             {
-                Debug.Log("����");
                 anim.SetBool("Attack", false);
                 isShot = false;
 
@@ -77,6 +72,10 @@ namespace Obstacles.Laserbook
                 Vector2 hitPosition = new Vector3(_minLen, 0, 0);
                 _laserRenderer.SetPosition(1, hitPosition);
                 _hitVFX.transform.localPosition = hitPosition;
+                if(hit.collider.TryGetComponent(out IDamageable target))
+                {
+                    target.ApplyDamage(damage);
+                }
             }
         }
 

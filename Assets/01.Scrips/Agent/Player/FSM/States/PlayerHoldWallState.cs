@@ -10,6 +10,7 @@ namespace Agents.Players.FSM
         private Stat _playerSpeedReducePower;
         private PlayerHeatController _heatController;
         private bool _isStopped;
+        private float _currentTime = 0f;
 
         public PlayerHoldWallState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
@@ -38,10 +39,17 @@ namespace Agents.Players.FSM
             {
                 _stateMachine.ChangeState("Fall");
             }
-            if(_isStopped) return;
+            if (_isStopped) return;
+            _currentTime += Time.deltaTime;
+            if (_currentTime > 0.1f)
+            {
+                _currentTime = 0f;
+                _player.OnHoldingWallEvent?.Invoke();
+            }
+
             _mover.ReduceVerticalVelocity(Time.deltaTime * _playerSpeedReducePower.GetValue());
 
-            if (Mathf.Abs(_mover.YVelocity) < 0.05f)
+            if (Mathf.Abs(_mover.YVelocity) < 0.05f || _mover.YVelocity > 0)
             {
                 _player.OnReleaseWallEvent?.Invoke();
                 _mover.StopImmediately(true);
