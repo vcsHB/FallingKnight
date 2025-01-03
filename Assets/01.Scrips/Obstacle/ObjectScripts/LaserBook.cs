@@ -106,11 +106,6 @@ namespace Obstacles.Laserbook
                 _hitVFX.Stop();
             }
         }
-
-        public override float GetSpawnPosX()
-        {
-            return base.GetSpawnPosX();
-        }
     }
 }
 
