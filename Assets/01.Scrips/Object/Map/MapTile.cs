@@ -11,10 +11,18 @@ public class MapTile : MonoBehaviour
     [SerializeField] Obstacle[] obstacles;
 
 
-
-    private void OnEnable()
+    public void SetActiveTile(bool value)
     {
-        
+        if(value)
+        {
+            foreach (var obstacle in obstacles)
+            {
+                obstacle.ResetObstacle();
+            }
+        }
+
+        gameObject.SetActive(value);
+
     }
 
     void Update()
@@ -23,7 +31,7 @@ public class MapTile : MonoBehaviour
 
         if (followCam != null && transform.position.y >followCam.transform.position.y + followCam.Lens.OrthographicSize + offset)
         {
-            gameObject.SetActive(false);
+            SetActiveTile(false);
         }
     }
 }

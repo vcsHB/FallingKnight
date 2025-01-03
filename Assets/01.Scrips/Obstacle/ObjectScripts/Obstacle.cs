@@ -1,4 +1,3 @@
-using Combat;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,17 +5,17 @@ namespace Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        [SerializeField] Vector3 pos;
-        [SerializeField] protected float damage;
+        [SerializeField] private Vector3 pos;
 
         private void Awake()
         {
-            pos = transform.position;
+            pos = transform.localPosition;
         }
 
-        private void OnEnable()
+        public virtual void ResetObstacle()
         {
-            transform.position = pos;
+            transform.localPosition = pos;
+            gameObject.SetActive(true);
         }
     }
 }
