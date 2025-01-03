@@ -39,6 +39,7 @@ namespace Agents.Players
             HealthCompo = GetComponent<Health>();
             PlayerStatus = Status as PlayerStatusSO;
             HealthCompo.Initialize(Status.health.GetValue());
+            HealthCompo.OnHealthDecreaseEvent.AddListener(HandlePlayrHit);
             StateMachine = new PlayerStateMachine(this);
             StateMachine.Initialize("Fall");
         }
@@ -46,6 +47,12 @@ namespace Agents.Players
         private void Update()
         {
             StateMachine.UpdateState();
+        }
+
+        
+        private void HandlePlayrHit()
+        {
+            StateMachine.ChangeState("AirRolling");
         }
 
     }

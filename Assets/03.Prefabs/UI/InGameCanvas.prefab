@@ -220,10 +220,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 82584341249215571}
   m_HandleRect: {fileID: 4327731934967281433}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.511
+  m_MinValue: -40
+  m_MaxValue: 0
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6486,6 +6486,7 @@ GameObject:
   - component: {fileID: 4661477955339580823}
   - component: {fileID: 8885034964569756207}
   - component: {fileID: 8593005843331630843}
+  - component: {fileID: 383809163033328059}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -6552,6 +6553,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
+--- !u!114 &383809163033328059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025650254075487235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb71c0130dabfd418558c98bf6c6e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 41d55fe6cf2be79479160336587a0dc4, type: 2}
+  _bgmSlider: {fileID: 8583981019859971654}
+  _sfxSlider: {fileID: 3534956475872127175}
 --- !u!1 &3341752100337122136
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,6 +7194,7 @@ GameObject:
   - component: {fileID: 5980014854874818819}
   - component: {fileID: 5266495454972805532}
   - component: {fileID: 3217275525600013549}
+  - component: {fileID: 3396554146982550285}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
@@ -7251,10 +7268,41 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4584163737299023075}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3396554146982550285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584163737299023075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8fcf6d55731a04daa365f581539332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useUnscaledTime: 1
+  _duration: 0.1
+  _isActive: 0
+  OnPausePanelCloseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 383809163033328059}
+        m_TargetAssemblyTypeName: SoundManage.SoundSetter, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _uiInput: {fileID: 11400000, guid: 1685b81d1d8c2244a8d5304866283ccc, type: 2}
 --- !u!1 &4753509977259262911
 GameObject:
   m_ObjectHideFlags: 0
@@ -7795,7 +7843,7 @@ GameObject:
   - component: {fileID: 2380033722903652769}
   - component: {fileID: 4970782953897139196}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7902,7 +7950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2380033722903652769}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3396554146982550285}
+        m_TargetAssemblyTypeName: UIManage.InGame.PausePanel, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5727870648533987940
 GameObject:
   m_ObjectHideFlags: 0
@@ -8638,7 +8698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6784018986299119570}
   - component: {fileID: 1942285177537192606}
-  - component: {fileID: 8691975368586474122}
+  - component: {fileID: 4156932271884997444}
   m_Layer: 5
   m_Name: DiePanel
   m_TagString: Untagged
@@ -8681,7 +8741,7 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &8691975368586474122
+--- !u!114 &4156932271884997444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8690,12 +8750,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6853565610608822958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da37b5eb79ccfdd4d9539d8aff0cc4dc, type: 3}
+  m_Script: {fileID: 11500000, guid: fb2be06581fd9db4fb7c414f80f0c5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _useUnscaledTime: 1
   _duration: 0.2
   _isActive: 0
+  _stoneAmountText: {fileID: 1241981235788659575}
+  _depthText: {fileID: 4724218682640318334}
 --- !u!1 &6964325975643098620
 GameObject:
   m_ObjectHideFlags: 0
@@ -9506,10 +9568,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 8411557106990814251}
   m_HandleRect: {fileID: 4543453771211130560}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.511
+  m_MinValue: -40
+  m_MaxValue: 0
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
