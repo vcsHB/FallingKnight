@@ -1,10 +1,21 @@
+using Obstacles;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class MapTileNonactivation : MonoBehaviour
+public class MapTile : MonoBehaviour
 {
     [SerializeField] private float offset = 1.0f;
     public CinemachineCamera followCam;
+
+    [SerializeField] Obstacle[] obstacles;
+
+
+
+    private void OnEnable()
+    {
+        
+    }
 
     void Update()
     {

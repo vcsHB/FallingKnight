@@ -8,10 +8,5 @@ namespace Obstacles.HorizontalLadder
         {
             gameObject.SetActive(false);
         }
-
-        public override float GetSpawnPosX()
-        {
-            return SpawnPosXList[0];
-        }
     }
 }

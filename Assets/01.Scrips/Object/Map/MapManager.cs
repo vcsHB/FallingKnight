@@ -6,7 +6,6 @@ namespace Map.MapManager
     using System.Collections.Generic;
     using System.Collections;
     using Unity.Cinemachine;
-    using Obstacles;
     using UIManage.InGame;
 
     public class MapManager : MonoBehaviour
@@ -30,7 +29,6 @@ namespace Map.MapManager
         /// 맵타일 큐를 담은 리스트
         /// </summary>
         private List<Queue<GameObject>> poolingQueueList = new List<Queue<GameObject>>();
-        private List<List<GameObject>>  poolingObstacleList = new List<List<GameObject>>();
 
         void Awake()
         {
@@ -49,7 +47,6 @@ namespace Map.MapManager
             for (int i = 0; i < mapDatas.mapDataArray.Length; i++)
             {
                 poolingQueueList.Add(new Queue<GameObject>());
-                poolingObstacleList.Add(new List<GameObject>());
             }
 
             ChangeStage();
@@ -65,8 +62,6 @@ namespace Map.MapManager
             } while (currentMapData == mapDatas.mapDataArray[currentMapId]);
             
             currentMapData = mapDatas.mapDataArray[currentMapId];
-
-            stageChangePanel.Open();
 
             StartCoroutine(CoSpawnMap());
         }
@@ -87,7 +82,7 @@ namespace Map.MapManager
                     GameObject newMapTile = Instantiate(currentMapData.mapTileArray[i], new Vector2(0f, cameraBottomPosY - 10.0f), Quaternion.identity);
                     poolingQueueList[mapKind].Enqueue(newMapTile);
 
-                    newMapTile.GetComponent<MapTileNonactivation>().followCam = followCam;
+                    newMapTile.GetComponent<MapTile>().followCam = followCam;
                     newMapTile.SetActive(false);
                 }
             }
@@ -98,18 +93,6 @@ namespace Map.MapManager
             poolingQueueList[mapKind].Enqueue(startMapTile);
 
             nextMapTileNumber++;
-            #endregion
-
-            #region 풀링을 위한 장애물 생성
-            if (poolingObstacleList[mapKind].Count == 0)
-            {
-                for(int i = 0; i < currentMapData.ObstacleArray.Length; i++)
-                {
-                    GameObject obstacle = Instantiate(currentMapData.ObstacleArray[i], new Vector2(0, cameraBottomPosY - offset), Quaternion.identity);
-                    poolingObstacleList[mapKind].Add(obstacle);
-                    obstacle.SetActive(false);
-                }
-            }
             #endregion
 
             Transform lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
@@ -135,7 +118,7 @@ namespace Map.MapManager
                                                                 new Vector2(0f, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y), 
                                                                 Quaternion.identity);
 
-                        prefab.GetComponent<MapTileNonactivation>().followCam = followCam;
+                        prefab.GetComponent<MapTile>().followCam = followCam;
 
                         // lastMapTile을 prefab.transform으로 변경해서 다음에 생성될 맵타일 올바른 위치에 생성될 수 있도록 함.
                         lastMapTile = prefab.transform;
@@ -143,28 +126,18 @@ namespace Map.MapManager
 
                     poolingQueueList[mapKind].Enqueue(nextMapTile); // nextMapTile을 poolingQueueList[mapKind]에 Enqueue하면서 풀링이 되도록 함.
 
-                    if(nextMapTileNumber != 0 && nextMapTileNumber % 2 == 0) // 두 번에 한 번씩 Obstacle이 출현
-                    {
-                        GameObject obstacle = poolingObstacleList[mapKind][Random.Range(0, poolingObstacleList[mapKind].Count)];
-                        obstacle.transform.position = new Vector2(obstacle.GetComponent<Obstacle>().GetSpawnPosX(), cameraBottomPosY - offset);
-                        obstacle.SetActive(true);
-                    }
-
                     nextMapTileNumber++; // 새 맵타일을 생성할 경우를 위해서 다음에 올 맵타일이 몇 번째 맵타일인지 계산함.
                 }
 
                 yield return null;
             }
 
-            while(nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
+            stageChangePanel.Open();
+
+            while (nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
             {
                 poolingQueueList[mapKind].Enqueue(poolingQueueList[mapKind].Dequeue());
                 nextMapTileNumber++;
-            }
-
-            for (int i = 0; i < poolingObstacleList[mapKind].Count; i++)
-            {
-                poolingObstacleList[mapKind][i].SetActive(false); // 스테이지가 끝나면 모든 장애물 비활성화
             }
 
             ChangeStage();
