@@ -27,6 +27,8 @@ namespace Map.MapManager
 
         [SerializeField] private Transform lastMapTile = null;
 
+        private Transform player;
+
         /// <summary>
         /// 맵타일 큐를 담은 리스트
         /// </summary>
@@ -50,10 +52,12 @@ namespace Map.MapManager
             {
                 poolingQueueList.Add(new Queue<GameObject>());
             }
+            
+            player = followCam.Target.TrackingTarget;
 
             ChangeStage();
 
-            followCam.Target.TrackingTarget.position = new Vector2(followCam.Target.TrackingTarget.position.x, followCam.Target.TrackingTarget.position.y - followCam.Lens.OrthographicSize * 2.0f);
+            // player.position = new Vector2(player.position.x, player.position.y - followCam.Lens.OrthographicSize * 2.0f);
         }
 
         void ChangeStage()
@@ -74,6 +78,8 @@ namespace Map.MapManager
 
         IEnumerator CoSpawnMap()
         {
+            yield return new WaitForSeconds(0.5f);
+
             int nextMapTileNumber = 0;
             int mapKind = (int)currentMapData.mapKind; // enum으로 현재 맵의 종류 찾기
 
@@ -104,8 +110,13 @@ namespace Map.MapManager
                 nextMapTileNumber++;
 
                 lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
+
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - offset);
             }
+
             
+            player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y - offset);
+
             while (totalMapTileNumber > nextMapTileNumber)
             {
                 cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표

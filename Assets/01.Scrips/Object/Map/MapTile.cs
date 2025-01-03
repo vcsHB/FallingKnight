@@ -28,7 +28,7 @@ public class MapTile : MonoBehaviour
     {
         // transform.position = new Vector2(transform.position.x, transform.position.y + MapManager.Instance.fallingSpeed * Time.deltaTime);
 
-        if (followCam != null && transform.position.y >followCam.transform.position.y + followCam.Lens.OrthographicSize + offset)
+        if (followCam != null && transform.position.y > followCam.transform.position.y + followCam.Lens.OrthographicSize + offset)
         {
             SetActiveTile(false);
         }
