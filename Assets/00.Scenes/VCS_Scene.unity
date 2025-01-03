@@ -302,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 580304581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 49.49, z: -10}
+  m_LocalPosition: {x: 0, y: 20, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -526,25 +526,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &848539938 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8515856020490755261, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
-  m_PrefabInstance: {fileID: 7977626947002989579}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &848539941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848539938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda919684ee5c6c4dae3b045d24d76bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collectAmount: 0
-  _stoneCollectText: {fileID: 1186788672}
 --- !u!1 &953947234
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +584,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65e010ab53abc384b8472bdcff60e154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1075389717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7054778895362989754, guid: 0bfb6e91ae452d04f87e4b96a84bf3d6, type: 3}
+  m_PrefabInstance: {fileID: 5951555787538877837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b4a7bf41ff89f43869351d0eece696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1114737135
@@ -909,7 +901,7 @@ Transform:
   m_GameObject: {fileID: 1438113077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 40.3, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -963,6 +955,10 @@ PrefabInstance:
       propertyPath: followCam
       value: 
       objectReference: {fileID: 1438113078}
+    - target: {fileID: 1108748184177049520, guid: 2bb411a899dad6a4e8357c163144243a, type: 3}
+      propertyPath: stageChangePanel
+      value: 
+      objectReference: {fileID: 1075389717}
     - target: {fileID: 1108748184177049520, guid: 2bb411a899dad6a4e8357c163144243a, type: 3}
       propertyPath: currentMapData.mapKind
       value: 1
@@ -1315,7 +1311,7 @@ Transform:
   m_GameObject: {fileID: 1877432099}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 40.3, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23670,15 +23666,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703807156695047727, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: _maxHeat
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4346928494463511088, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
+      propertyPath: _stoneCollectText
+      value: 
+      objectReference: {fileID: 1186788672}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740554933104029537, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23713,20 +23713,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7439349730430431155, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
-      propertyPath: _reducePower
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7439349730430431155, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
       propertyPath: _gravityScale
-      value: 2.01
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8515856020490755261, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 848539941}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bcb9a964d349e6408d201b494545670, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -196,12 +196,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
-  _reducePower: 1
-  _gravityScale: 0.7
+  _reducePower: 4
+  _gravityScale: 2.01
   _wallLayer:
     serializedVersion: 2
     m_Bits: 512
   _wallDetectRange: 0.32
+  _limitVerticalVelocity: 40
   <CanManualMove>k__BackingField: 1
 --- !u!114 &6285758332332465994
 MonoBehaviour:
@@ -326,9 +327,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHeat: 0
-  _maxHeat: 10
+  _maxHeat: 2
   _coolingSpeed: 0.5
   _nonCoolTerm: 2
+  _dropAttackNeedHeat: 0.7
 --- !u!1 &707594720764645728
 GameObject:
   m_ObjectHideFlags: 0
@@ -50122,6 +50124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9143087438914501104}
   - component: {fileID: 7480937826054702562}
+  - component: {fileID: 4346928494463511088}
   m_Layer: 12
   m_Name: StoneCollector
   m_TagString: Untagged
@@ -50180,6 +50183,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &4346928494463511088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515856020490755261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda919684ee5c6c4dae3b045d24d76bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectAmount: 0
+  _stoneCollectText: {fileID: 0}
 --- !u!1 &8711102995451816329
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ MonoBehaviour:
     baseValue: 2
     modifier: []
   speedReducePower:
-    baseValue: 12
+    baseValue: 14
     modifier: []
   dashPower:
     baseValue: 6
