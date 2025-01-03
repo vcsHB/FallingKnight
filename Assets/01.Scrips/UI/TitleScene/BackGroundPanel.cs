@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UIManage.LobbyScene
+namespace UIManage.TitleScene
 {
 
     public class BackGroundPanel : MonoBehaviour

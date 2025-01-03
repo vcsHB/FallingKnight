@@ -63,6 +63,14 @@ namespace InputSystem
             if (context.performed)
                 OnDropAttackEvent?.Invoke();
         }
+
+        public void ClearEventsAll()
+        {
+            OnJumpEvent = null;
+            OnAttackEvent = null;
+            OnDropAttackEvent = null;
+            OnHoldWallEvent = null;
+        }
     }
 
 }

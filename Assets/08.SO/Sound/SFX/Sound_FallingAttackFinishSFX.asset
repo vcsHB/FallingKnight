@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dedfd9a2716b9a4b9443f76cc9052eb, type: 3}
-  m_Name: Sound_StoneCollectSFX
+  m_Name: Sound_FallingAttackFinishSFX
   m_EditorClassIdentifier: 
-  soundName: StoneCollectSFX
+  soundName: FallingAttackFinishSFX
   audioType: 1
-  clip: {fileID: 8300000, guid: 811579c6e1f5d474c860072f6e0215eb, type: 3}
+  clip: {fileID: 8300000, guid: 532bc565420d58e498ea96d89399336f, type: 3}
   loop: 0
   randomizePitch: 1
-  randomPitchModifier: 0.279
+  randomPitchModifier: 0.1
   volume: 1
-  pitch: 1
+  pitch: 1.17

@@ -32,7 +32,7 @@ namespace UpgradeStore.Slots.DefenseUpgrade
                 return;
             }
 
-            JsonManager.instance.gameData.money -= (int)upgradeCost;
+            JsonManager.instance.UseMoney((int)upgradeCost);
             upgradeCost += upgradeCostAmountOfIncrease;
 
             defenseLevel++;
