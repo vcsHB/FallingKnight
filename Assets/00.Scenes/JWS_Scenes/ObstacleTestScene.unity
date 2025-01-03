@@ -127,54 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 333797198686893833, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 333797198686893833, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 333797198686893833, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.61960787
-      objectReference: {fileID: 0}
-    - target: {fileID: 1005932980889568590, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 1005932980889568590, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 1005932980889568590, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
-    - target: {fileID: 1019596141423174156, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 1019596141423174156, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 1019596141423174156, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
-    - target: {fileID: 2833098451366669964, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 2833098451366669964, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 2833098451366669964, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
     - target: {fileID: 2937772726837023466, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215,81 +167,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4179929440255029640, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 4179929440255029640, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 4179929440255029640, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
     - target: {fileID: 4440830626203757850, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
       propertyPath: m_Name
       value: background_sky_9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4499134850327186577, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 4499134850327186577, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4499134850327186577, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.61960787
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408335706738038764, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408335706738038764, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408335706738038764, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
-    - target: {fileID: 5846728817477897593, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7798742
-      objectReference: {fileID: 0}
-    - target: {fileID: 5846728817477897593, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.502749
-      objectReference: {fileID: 0}
-    - target: {fileID: 5846728817477897593, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.7257154
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734311856771627715, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734311856771627715, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6734311856771627715, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.61960787
-      objectReference: {fileID: 0}
-    - target: {fileID: 7272170369591735813, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.7294118
-      objectReference: {fileID: 0}
-    - target: {fileID: 7272170369591735813, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7272170369591735813, guid: 6b53561685c3636498b33d4960beac3a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.61960787
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

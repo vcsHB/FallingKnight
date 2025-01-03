@@ -176,6 +176,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -237,6 +249,18 @@ PrefabInstance:
     - target: {fileID: 5630415928052117463, guid: 94db1dc033f7063409191428f5aced75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -330,6 +354,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2937772726837023466}
     m_Modifications:
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
     - target: {fileID: 6314229159335463160, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
       propertyPath: m_Name
       value: MagicStone
@@ -392,6 +428,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2937772726837023466}
     m_Modifications:
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
     - target: {fileID: 6314229159335463160, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
       propertyPath: m_Name
       value: MagicStone
@@ -662,6 +710,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2937772726837023466}
     m_Modifications:
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
     - target: {fileID: 6314229159335463160, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
       propertyPath: m_Name
       value: MagicStone
@@ -842,6 +902,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -903,6 +975,18 @@ PrefabInstance:
     - target: {fileID: 5630415928052117463, guid: 94db1dc033f7063409191428f5aced75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -966,6 +1050,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -984,6 +1080,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2937772726837023466}
     m_Modifications:
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610538712200833493, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
+      propertyPath: m_Color.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
     - target: {fileID: 6314229159335463160, guid: ee0f3c1274ad62d4680227bad9455bde, type: 3}
       propertyPath: m_Name
       value: MagicStone
@@ -1089,6 +1197,18 @@ PrefabInstance:
     - target: {fileID: 5630415928052117463, guid: 94db1dc033f7063409191428f5aced75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7798742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.g
+      value: 0.502749
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627040886254044958, guid: 94db1dc033f7063409191428f5aced75, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7257154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
