@@ -1,8 +1,12 @@
+using System;
+using Combat;
 using UnityEngine;
 namespace Agents.Players
 {
     public class PlayerAttackController : MonoBehaviour, IAgentComponent
     {
+        [SerializeField] private Caster _dropAttackCaster;
+        public event Action OnDropAttackSuccessed;
         private Player _player;
         private AgentRenderer _agentRenderer;
 
@@ -10,7 +14,20 @@ namespace Agents.Players
         {
             _player = agent as Player;
 
+            _dropAttackCaster.OnCastSuccessEvent.AddListener(HandleDropAttackOver);
         }
+
+        public void HandleUpdateDropAttackCaster()
+        {
+            _dropAttackCaster.Cast();
+        }
+
+        private void HandleDropAttackOver()
+        {
+            OnDropAttackSuccessed?.Invoke();
+            
+        }
+
         public void AfterInit()
         {
         }
@@ -19,12 +36,9 @@ namespace Agents.Players
         {
         }
 
-        private void Attack()
-        {
-            Vector2 attackDirection = new Vector2(_agentRenderer.FacingDirection, 0);
 
-            
-        }
+        
+
 
 
 

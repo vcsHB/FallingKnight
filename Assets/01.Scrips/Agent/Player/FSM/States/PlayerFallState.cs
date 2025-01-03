@@ -1,11 +1,12 @@
 using System;
+using Agents.Animate;
 using UnityEngine;
 namespace Agents.Players.FSM
 {
-    public class PlayerFallState : PlayerAirState
+    public class PlayerFallState : PlayerAttackableAirState
     {
 
-        public PlayerFallState(Player player, PlayerStateMachine stateMachine, int animationHash) : base(player, stateMachine, animationHash)
+        public PlayerFallState(Player player, PlayerStateMachine stateMachine, AnimParamSO stateAnimParam) : base(player, stateMachine, stateAnimParam)
         {
         }
 
@@ -24,6 +25,11 @@ namespace Agents.Players.FSM
             {
                 _stateMachine.ChangeState("Move");
             }
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
         }
 
 

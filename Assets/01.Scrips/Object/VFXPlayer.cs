@@ -12,9 +12,9 @@ namespace ObjectManage
         public GameObject ObjectPrefab => gameObject;
 
         [SerializeField] private ParticleSystem _vfx;
-        [SerializeField] private float _lifeTime = 2f;
+        [SerializeField] protected float _lifeTime = 2f;
 
-        public void Play()
+        public virtual void Play()
         {
             _vfx.Play();
 

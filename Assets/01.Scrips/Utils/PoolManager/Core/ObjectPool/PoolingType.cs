@@ -2,6 +2,6 @@ namespace ObjectPooling
 {
     public enum PoolingType
     {
-        SoundPlayer,DashVFX,HitVFX,
+        SoundPlayer,DashVFX,HitVFX,AttackTargetHitVFX,
     }
 }
