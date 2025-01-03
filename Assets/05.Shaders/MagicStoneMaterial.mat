@@ -42,6 +42,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _IdleScale: 0.1
+    - _LightSize: 0.3
     - _LightSpeed: 1.27
     - _Speed: 3
     m_Colors:
