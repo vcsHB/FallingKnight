@@ -112,11 +112,12 @@ namespace Map.MapManager
 
                 lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
 
-                player.position = new Vector2(player.position.x, lastMapTile.position.y - offset);
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 0.2f);
             }
-
-            
-            player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y - offset);
+            else
+            {
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 1.2f);
+            }
 
             while (totalMapTileNumber > nextMapTileNumber)
             {
