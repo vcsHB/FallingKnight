@@ -5,9 +5,7 @@ namespace Map.MapData
     public enum MapKind
     {
         ExteriorWall01,
-        ExteriorWall02,
         Library01,
-        Library02,
     }
 
     [System.Serializable]

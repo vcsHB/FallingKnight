@@ -21,7 +21,7 @@ namespace Map.MapManager
         [Header("StageChangePanel")]
         [SerializeField] private StageChangePanel stageChangePanel;
 
-        [SerializeField] private const float offset = 20.0f;
+        private const float offset = 10.0f;
         public const int    totalMapTileNumber = 10;
         public MapData      currentMapData;
 
@@ -53,7 +53,7 @@ namespace Map.MapManager
 
             ChangeStage();
 
-            followCam.Target.TrackingTarget.position = new Vector2(followCam.Target.TrackingTarget.position.x, followCam.Target.TrackingTarget.position.y - followCam.Lens.OrthographicSize * 1.5f);
+            followCam.Target.TrackingTarget.position = new Vector2(followCam.Target.TrackingTarget.position.x, followCam.Target.TrackingTarget.position.y - followCam.Lens.OrthographicSize * 2.0f);
         }
 
         void ChangeStage()
@@ -109,7 +109,7 @@ namespace Map.MapManager
             while (totalMapTileNumber > nextMapTileNumber)
             {
                 cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표
-                if (cameraBottomPosY - offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 - offset 보다 커지면 다음 맵타일 생성
+                if (cameraBottomPosY + offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 + offset 보다 커지면 다음 맵타일 생성
                 {
                     GameObject nextMapTile = poolingQueueList[mapKind].Dequeue(); // poolingQueueList[mapKind]에서 Dequeue한 오브젝트를 mapTile에 할당
                     if (!nextMapTile.activeSelf) // nextMapTile이 활성화되어 있지 않을 경우, 

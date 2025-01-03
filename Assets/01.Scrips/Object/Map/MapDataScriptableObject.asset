@@ -15,20 +15,10 @@ MonoBehaviour:
   mapDataArray:
   - mapKind: 0
     mapTileArray:
-    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
-    - {fileID: 8250814098249919379, guid: d8669d9f18490424ca6740a4e976366f, type: 3}
-    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
-  - mapKind: 1
-    mapTileArray:
-    - {fileID: 3235783741331721394, guid: bc8688e0366486b40a588e0e2ee2e263, type: 3}
-    - {fileID: 3235783741331721394, guid: 77b326dd9b920804980c876d44e239d7, type: 3}
-    - {fileID: 6574056650101920648, guid: 0514fbac940b55245aef29543bfc1694, type: 3}
-  - mapKind: 1
-    mapTileArray:
-    - {fileID: 8250814098249919379, guid: d8669d9f18490424ca6740a4e976366f, type: 3}
-    - {fileID: 8250814098249919379, guid: dbae0422e2e441240b564b257d8e0a70, type: 3}
-    - {fileID: 8250814098249919379, guid: d8669d9f18490424ca6740a4e976366f, type: 3}
-  - mapKind: 3
+    - {fileID: 4440830626203757850, guid: b5e05d4e889986e4db84e245ccc20daa, type: 3}
+    - {fileID: 4440830626203757850, guid: 785192468fb9d414bb086ce71a879a0f, type: 3}
+    - {fileID: 4440830626203757850, guid: 605035da2659ebb4ab8b648ef8e49d52, type: 3}
+  - mapKind: 2
     mapTileArray:
     - {fileID: 3235783741331721394, guid: bc8688e0366486b40a588e0e2ee2e263, type: 3}
     - {fileID: 3235783741331721394, guid: 77b326dd9b920804980c876d44e239d7, type: 3}
