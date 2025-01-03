@@ -35,7 +35,6 @@ namespace UpgradeStore.Slots.AttackSpeedUpgrade
             JsonManager.instance.gameData.money -= (int)upgradeCost;
             upgradeCost += upgradeCostAmountOfIncrease;
 
-            //딕셔너리 참조해서 값 변경하기
             attackSpeedLevel++;
             JsonManager.instance.gameData.attackSpeedLevel = (int)attackSpeedLevel;
             JsonManager.instance.Save();

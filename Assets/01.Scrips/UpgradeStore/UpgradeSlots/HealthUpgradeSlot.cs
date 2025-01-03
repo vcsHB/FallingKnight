@@ -35,7 +35,6 @@ namespace UpgradeStore.Slots.HealthUpgrade
             JsonManager.instance.gameData.money -= (int)upgradeCost;
             upgradeCost += upgradeCostAmountOfIncrease;
 
-            //딕셔너리 참조해서 값 변경하기
             healthLevel++;
             JsonManager.instance.gameData.healthLevel = (int)healthLevel;
             JsonManager.instance.Save();

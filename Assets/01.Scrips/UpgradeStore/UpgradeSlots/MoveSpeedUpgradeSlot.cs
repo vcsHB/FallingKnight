@@ -35,7 +35,6 @@ namespace UpgradeStore.Slots.MoveSpeedUpgrade
             JsonManager.instance.gameData.money -= (int)upgradeCost;
             upgradeCost += upgradeCostAmountOfIncrease;
 
-            //딕셔너리 참조해서 값 변경하기
             moveSpeedLevel++;
             JsonManager.instance.gameData.moveSpeedLevel = (int)moveSpeedLevel;
             JsonManager.instance.Save();

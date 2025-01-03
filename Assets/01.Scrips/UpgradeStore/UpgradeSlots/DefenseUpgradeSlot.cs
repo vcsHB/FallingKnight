@@ -35,7 +35,6 @@ namespace UpgradeStore.Slots.DefenseUpgrade
             JsonManager.instance.gameData.money -= (int)upgradeCost;
             upgradeCost += upgradeCostAmountOfIncrease;
 
-            //딕셔너리 참조해서 값 변경하기
             defenseLevel++;
             JsonManager.instance.gameData.defenseLevel = (int)defenseLevel;
             JsonManager.instance.Save();

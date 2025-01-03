@@ -35,7 +35,6 @@ namespace UpgradeStore.Slots.AttackDamageUpgrade
             JsonManager.instance.gameData.money -= (int)upgradeCost;
             upgradeCost += upgradeCostAmountOfIncrease;
 
-            //딕셔너리 참조해서 값 변경하기
             attackDamageLevel++;
             JsonManager.instance.gameData.attackDamageLevel = (int)attackDamageLevel;
             JsonManager.instance.Save();
