@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5106cfdc6bcbe79498161e406b978f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPosXList:
+  - 0
+  - 3
   amount: 1
   _detectRadius: 0.8
   _collecterLayer:

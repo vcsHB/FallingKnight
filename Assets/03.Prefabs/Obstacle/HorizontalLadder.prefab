@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4115415856899407305}
   - component: {fileID: 8058015034035917177}
   - component: {fileID: 3175671509324870103}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestroyFeedBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 3218374888252671421}
   - component: {fileID: 5358670791757469000}
   - component: {fileID: 8145515599909730233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HorizontalLadder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

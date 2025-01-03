@@ -13,7 +13,7 @@ namespace Map.MapData
     public class MapData
     {
         /// <summary>
-        /// ¸Ê ÀÌ¸§
+        /// ï¿½ï¿½ ï¿½Ì¸ï¿½
         /// </summary>
         public MapKind mapKind;
 

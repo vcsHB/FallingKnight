@@ -21,7 +21,7 @@ namespace ObjectManage
             if (target.TryGetComponent(out ICollectable collector))
             {
                 collector.Collect(this);
-
+                gameObject.SetActive(false);
 
             }
         }
