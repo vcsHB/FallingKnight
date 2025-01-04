@@ -83,6 +83,12 @@ namespace Managers
         }
 
 
+        public void HandleForceExit()
+        {
+            SceneManager.LoadScene("TitleScene");
+        }
+
+
 
     }
 

@@ -10,6 +10,7 @@ namespace Managers
     public class TitleSceneManager : MonoBehaviour
     {
         [SerializeField] private float _moveToGameSceneTerm = 1f;
+        [SerializeField] private AudioSource _audioSource;
         [Header("Start Animation")]
         [SerializeField] private UIPanel _fadePanel;
         [SerializeField] private RectTransform _playerPanelTrm;
@@ -36,6 +37,11 @@ namespace Managers
         public void HandleGameQuit()
         {
             Application.Quit();
+        }
+
+        public void HandlePlayButtonSound()
+        {
+            _audioSource.PlayOneShot(_audioSource.clip);
         }
     }
 
