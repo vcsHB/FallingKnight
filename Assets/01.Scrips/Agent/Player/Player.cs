@@ -43,7 +43,12 @@ namespace Agents.Players
             HealthCompo.Initialize(Status.health.GetValue());
             HealthCompo.OnHealthDecreaseEvent.AddListener(HandlePlayrHit);
             StateMachine = new PlayerStateMachine(this);
+        }
+
+        private void Start()
+        {
             StateMachine.Initialize("Fall");
+
         }
 
         private void Update()
@@ -51,10 +56,10 @@ namespace Agents.Players
             StateMachine.UpdateState();
         }
 
-        
+
         public void HandlePlayrHit()
         {
-            if(!StateMachine.CurrentStateName.Equals("AirRolling"))
+            if (!StateMachine.CurrentStateName.Equals("AirRolling"))
                 StateMachine.ChangeState("AirRolling");
         }
 

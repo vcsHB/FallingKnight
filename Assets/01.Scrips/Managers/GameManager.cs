@@ -20,7 +20,6 @@ namespace Managers
         [SerializeField] private PlayerInput _playerInput;
         [SerializeField] private UIInputReader _uiInputReader;
         private bool _isGameOver;
-        //[SerializeField] private FadePanel
 
         private void Awake()
         {
@@ -67,6 +66,7 @@ namespace Managers
             _fadePanel.Open();
             Time.timeScale = 1f;
             yield return new WaitForSeconds(_waitTerm);
+            _playerInput.ClearEventsAll();
             SetInputControl(true);
             SceneManager.LoadScene("TitleScene"); // 씬이름 안맞으면 바꾸기
         }
@@ -80,6 +80,12 @@ namespace Managers
         public void AddStone(int amount)
         {
             _stoneCollector.Collect(amount);
+        }
+
+
+        public void HandleForceExit()
+        {
+            SceneManager.LoadScene("TitleScene");
         }
 
 

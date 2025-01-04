@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 79e9c60deae5657448a27e528d3a9cd5
+guid: 5d04055e3c0d4ae42b2228fc5b5468c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4320295261928297051
-    second: logo_0
-  - first:
-      213: 5470614613321624601
-    second: logo_1
-  - first:
-      213: 4560591551370500262
-    second: logo_2
-  - first:
-      213: 6640445872580291462
-    second: logo_3
-  - first:
-      213: 7220771215297418599
-    second: logo_4
-  - first:
-      213: -8223382129855978605
-    second: logo_5
+      213: 7780884505964255961
+    second: UI_WASD_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -115,133 +100,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: logo_0
+      name: UI_WASD_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9da1758bb314bfb60800000000000000
+      internalID: 7780884505964255961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_WASD_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fef4a376e46f6d42b3bb4f0ee148531
+      internalID: 1812438929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_WASD_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810b3f819c9301244b55a34a7cdda235
+      internalID: 1840675890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_WASD_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b627e08b30844a4aa835f5ffae056c0
+      internalID: 247070247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_WASD_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 56
-        height: 82
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ade5f3695a3b04c0800000000000000
-      internalID: -4320295261928297051
+      spriteID: 1df8747a570cc40449973e0f7c31ca22
+      internalID: 1024476651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: logo_1
+      name: UI_WASD_5
       rect:
         serializedVersion: 2
-        x: 55
-        y: 48
-        width: 19
-        height: 34
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91ca81a91078beb40800000000000000
-      internalID: 5470614613321624601
+      spriteID: 435008e9d0a00974e821d1f825063c91
+      internalID: 1555143437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: logo_2
+      name: UI_WASD_6
       rect:
         serializedVersion: 2
-        x: 70
-        y: 48
-        width: 18
-        height: 34
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a816195ad97a4f30800000000000000
-      internalID: 4560591551370500262
+      spriteID: b4f28d1b0e93b5b4793dfff8ae2a45af
+      internalID: 1703336590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: logo_3
+      name: UI_WASD_7
       rect:
         serializedVersion: 2
-        x: 74
-        y: 2
-        width: 83
-        height: 94
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 3}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 68b6b59a65a972c50800000000000000
-      internalID: 6640445872580291462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: logo_4
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 10
-        width: 40
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7651b2cb925553460800000000000000
-      internalID: 7220771215297418599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: logo_5
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 36
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 393a3a1b58da0ed80800000000000000
-      internalID: -8223382129855978605
+      spriteID: f416989fb6e205c42a2e70c18e36a869
+      internalID: -1302861430
       vertices: []
       indices: 
       edges: []
@@ -250,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4e6118992c8edff409e1005dde53ed0f
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +289,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      logo_0: -4320295261928297051
-      logo_1: 5470614613321624601
-      logo_2: 4560591551370500262
-      logo_3: 6640445872580291462
-      logo_4: 7220771215297418599
-      logo_5: -8223382129855978605
+      UI_WASD_0: 7780884505964255961
+      UI_WASD_1: 1812438929
+      UI_WASD_2: 1840675890
+      UI_WASD_3: 247070247
+      UI_WASD_4: 1024476651
+      UI_WASD_5: 1555143437
+      UI_WASD_6: 1703336590
+      UI_WASD_7: -1302861430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

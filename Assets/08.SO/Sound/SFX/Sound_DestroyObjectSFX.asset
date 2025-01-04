@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: DestroyObjectSFX
   audioType: 1
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 532bc565420d58e498ea96d89399336f, type: 3}
   loop: 0
   randomizePitch: 1
   randomPitchModifier: 0.1
   volume: 1
-  pitch: 1
+  pitch: 0.72
