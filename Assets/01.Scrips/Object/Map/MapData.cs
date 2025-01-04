@@ -4,10 +4,9 @@ namespace Map.MapData
 {
     public enum MapKind
     {
-        ExteriorWall01,
-        ExteriorWall02,
-        Library01,
-        Library02,
+        ExteriorWall_Day,
+        ExteriorWall_Night,
+        Library,
     }
 
     [System.Serializable]

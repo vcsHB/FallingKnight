@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
-using Unity.VisualScripting;
 namespace InputSystem
 {
     [CreateAssetMenu(menuName = "SO/InputSystem/PlayerInput")]
@@ -14,6 +13,7 @@ namespace InputSystem
         public event Action OnDropAttackEvent;
         public Vector2 InputDirection { get; private set; }
         private Controls _controls;
+        public bool canControl = true;
 
         private void OnEnable()
         {
@@ -31,17 +31,20 @@ namespace InputSystem
         }
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             if (context.performed)
                 OnAttackEvent?.Invoke();
         }
 
         public void OnInteract(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             OnInteractEvent?.Invoke();
         }
 
         public void OnJump(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             if (context.performed)
                 OnHoldWallEvent?.Invoke();
             else if (context.canceled)
@@ -50,13 +53,23 @@ namespace InputSystem
 
         public void OnMove(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             InputDirection = context.ReadValue<Vector2>();
         }
 
         public void OnDropAttack(InputAction.CallbackContext context)
         {
+            if(!canControl) return;
             if (context.performed)
                 OnDropAttackEvent?.Invoke();
+        }
+
+        public void ClearEventsAll()
+        {
+            OnJumpEvent = null;
+            OnAttackEvent = null;
+            OnDropAttackEvent = null;
+            OnHoldWallEvent = null;
         }
     }
 

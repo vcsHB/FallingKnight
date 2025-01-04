@@ -21,11 +21,13 @@ namespace Map.MapManager
         [Header("StageChangePanel")]
         [SerializeField] private StageChangePanel stageChangePanel;
 
-        [SerializeField] private const float offset = 20.0f;
+        private const float offset = 10.0f;
         public const int    totalMapTileNumber = 10;
         public MapData      currentMapData;
 
         [SerializeField] private Transform lastMapTile = null;
+
+        private Transform player;
 
         /// <summary>
         /// 맵타일 큐를 담은 리스트
@@ -50,10 +52,12 @@ namespace Map.MapManager
             {
                 poolingQueueList.Add(new Queue<GameObject>());
             }
+            
+            player = followCam.Target.TrackingTarget;
 
             ChangeStage();
 
-            followCam.Target.TrackingTarget.position = new Vector2(followCam.Target.TrackingTarget.position.x, followCam.Target.TrackingTarget.position.y - followCam.Lens.OrthographicSize * 1.5f);
+            // player.position = new Vector2(player.position.x, player.position.y - followCam.Lens.OrthographicSize * 2.0f);
         }
 
         void ChangeStage()
@@ -74,6 +78,8 @@ namespace Map.MapManager
 
         IEnumerator CoSpawnMap()
         {
+            yield return new WaitForSeconds(0.5f);
+
             int nextMapTileNumber = 0;
             int mapKind = (int)currentMapData.mapKind; // enum으로 현재 맵의 종류 찾기
 
@@ -89,6 +95,7 @@ namespace Map.MapManager
                     poolingQueueList[mapKind].Enqueue(newMapTile);
 
                     newMapTile.GetComponent<MapTile>().followCam = followCam;
+                    newMapTile.GetComponent<MapTile>().SetObstaclePos();
                     newMapTile.SetActive(false);
                 }
             }
@@ -104,12 +111,18 @@ namespace Map.MapManager
                 nextMapTileNumber++;
 
                 lastMapTile = startMapTile.transform; // 마지막으로 생성된 맵 타일의 트랜스폼
+
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 0.2f);
             }
-            
+            else
+            {
+                player.position = new Vector2(player.position.x, lastMapTile.position.y - lastMapTile.GetComponent<SpriteRenderer>().bounds.size.y * 1.2f);
+            }
+
             while (totalMapTileNumber > nextMapTileNumber)
             {
                 cameraBottomPosY = followCam.transform.position.y - followCam.Lens.OrthographicSize; // 화면의 아래 부분의 y좌표
-                if (cameraBottomPosY - offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 - offset 보다 커지면 다음 맵타일 생성
+                if (cameraBottomPosY + offset < lastMapTile.position.y) // lastTileMap의 y값이 화면의 아래 부분 + offset 보다 커지면 다음 맵타일 생성
                 {
                     GameObject nextMapTile = poolingQueueList[mapKind].Dequeue(); // poolingQueueList[mapKind]에서 Dequeue한 오브젝트를 mapTile에 할당
                     if (!nextMapTile.activeSelf) // nextMapTile이 활성화되어 있지 않을 경우, 
@@ -142,12 +155,6 @@ namespace Map.MapManager
                 }
 
                 yield return null;
-            }
-
-            while (nextMapTileNumber != 0 && nextMapTileNumber < currentMapData.mapTileArray.Length) // 다음 이 스테이지가 또 나왔을 때 처음부터 풀링을 하기 위함.
-            {
-                poolingQueueList[mapKind].Enqueue(poolingQueueList[mapKind].Dequeue());
-                nextMapTileNumber++;
             }
 
             ChangeStage();

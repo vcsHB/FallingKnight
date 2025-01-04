@@ -10,11 +10,16 @@ public class MapTile : MonoBehaviour
 
     [SerializeField] Obstacle[] obstacles;
 
+    public void SetObstaclePos()
+    {
+        foreach (var obstacle in obstacles)
+        {
+            obstacle.SetPos();
+        }
+    }
 
     public void SetActiveTile(bool value)
     {
-        gameObject.SetActive(value);
-        
         if(value)
         {
             foreach (var obstacle in obstacles)
@@ -22,13 +27,15 @@ public class MapTile : MonoBehaviour
                 obstacle.ResetObstacle();
             }
         }
+
+        gameObject.SetActive(value);
     }
 
     void Update()
     {
         // transform.position = new Vector2(transform.position.x, transform.position.y + MapManager.Instance.fallingSpeed * Time.deltaTime);
 
-        if (followCam != null && transform.position.y >followCam.transform.position.y + followCam.Lens.OrthographicSize + offset)
+        if (followCam != null && transform.position.y > followCam.transform.position.y + followCam.Lens.OrthographicSize + offset)
         {
             SetActiveTile(false);
         }

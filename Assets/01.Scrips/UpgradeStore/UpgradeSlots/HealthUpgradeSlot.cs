@@ -32,7 +32,7 @@ namespace UpgradeStore.Slots.HealthUpgrade
                 return;
             }
 
-            JsonManager.instance.gameData.money -= (int)upgradeCost;
+            JsonManager.instance.UseMoney((int)upgradeCost);
             upgradeCost += upgradeCostAmountOfIncrease;
 
             healthLevel++;

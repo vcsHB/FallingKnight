@@ -28,9 +28,11 @@ namespace Agents.Players
         [Header("Events")]
 
         public UnityEvent OnHoldWallEvent;
+        public UnityEvent OnHoldingWallEvent;
         public UnityEvent OnReleaseWallEvent;
         public UnityEvent OnAttackEvent;
         public UnityEvent OnDropAttackEvent;
+        public UnityEvent OnStoneCollectEvent;
 
 
         protected override void Awake()
@@ -39,13 +41,26 @@ namespace Agents.Players
             HealthCompo = GetComponent<Health>();
             PlayerStatus = Status as PlayerStatusSO;
             HealthCompo.Initialize(Status.health.GetValue());
+            HealthCompo.OnHealthDecreaseEvent.AddListener(HandlePlayrHit);
             StateMachine = new PlayerStateMachine(this);
+        }
+
+        private void Start()
+        {
             StateMachine.Initialize("Fall");
+
         }
 
         private void Update()
         {
             StateMachine.UpdateState();
+        }
+
+
+        public void HandlePlayrHit()
+        {
+            if (!StateMachine.CurrentStateName.Equals("AirRolling"))
+                StateMachine.ChangeState("AirRolling");
         }
 
     }

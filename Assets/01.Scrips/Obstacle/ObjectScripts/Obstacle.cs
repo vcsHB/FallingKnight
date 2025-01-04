@@ -5,10 +5,10 @@ namespace Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        [SerializeField] private Vector3 pos;
+        [SerializeField] protected Vector3 pos;
         [SerializeField] protected float damage;
 
-        private void Awake()
+        public virtual void SetPos()
         {
             pos = transform.localPosition;
         }

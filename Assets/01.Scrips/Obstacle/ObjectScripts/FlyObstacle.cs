@@ -1,6 +1,7 @@
 namespace Obstacles.FlyObstacle
 {
     using Combat;
+    using Managers;
     //Project
     using UnityEngine;
 
@@ -18,13 +19,15 @@ namespace Obstacles.FlyObstacle
 
         private bool isTrun              = default;
 
+        private Quaternion rot = Quaternion.identity;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             sr = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             isTrun = false;
             startPosition = transform.position;
@@ -57,6 +60,8 @@ namespace Obstacles.FlyObstacle
         public void Destroy()
         {
             gameObject.SetActive(false);
+            GameManager.Instance.AddStone(5);
+
         }
 
         private void OnDrawGizmos()
@@ -71,6 +76,20 @@ namespace Obstacles.FlyObstacle
             {
                 hit.ApplyDamage(damage);
             }
+        }
+
+        public override void SetPos()
+        {
+            base.SetPos();
+
+            rot = transform.localRotation;
+        }
+
+        public override void ResetObstacle()
+        {
+            transform.localPosition = pos;
+            transform.localRotation = rot;
+            gameObject.SetActive(true);
         }
     }
 }

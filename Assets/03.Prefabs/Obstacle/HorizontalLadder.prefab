@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
-  damage: 0
+  damage: 7
 --- !u!61 &8145515599909730233
 BoxCollider2D:
   m_ObjectHideFlags: 0
